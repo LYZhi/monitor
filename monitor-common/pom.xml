@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 监控父项目 -->
+    <parent>
+        <groupId>com.lyzhi</groupId>
+        <artifactId>monitor</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>..</relativePath>
+    </parent>
+
+    <!-- 项目基本信息 -->
+    <artifactId>monitor-common</artifactId>
+    <name>monitor-common</name>
+    <packaging>pom</packaging>
+    <modules>
+        <!-- 监控公共模块 -->
+        <module>monitor-common-core</module>
+        <!-- 监控WEB公共模块 -->
+        <module>monitor-common-web</module>
+    </modules>
+    <description>监控公共模块父工程</description>
+
+    <!-- 依赖管理 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- 监控公共模块 -->
+            <dependency>
+                <groupId>com.lyzhi</groupId>
+                <artifactId>monitor-client-core</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <!-- 监控WEB公共模块 -->
+            <dependency>
+                <groupId>com.lyzhi</groupId>
+                <artifactId>monitor-common-web</artifactId>
+                <version>${revision}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

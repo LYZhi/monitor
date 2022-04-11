@@ -11,8 +11,6 @@ import java.lang.reflect.Method;
  * 命令执行器
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月4日 下午2:00:29
  */
 @Slf4j
 @Setter
@@ -36,8 +34,7 @@ public class Invoker {
      * @param method 目标方法
      * @param target 目标对象
      * @return {@link Invoker}
-     * @author 皮锋
-     * @custom.date 2020/3/4 16:32
+     *
      */
     public static Invoker valueOf(Method method, Object target) {
         Invoker invoker = new Invoker();
@@ -54,8 +51,7 @@ public class Invoker {
      * @param paramValues 业务参数
      * @return {@link Object}
      * @throws Exception 代理执行业务方法异常
-     * @author 皮锋
-     * @custom.date 2020年3月4日 下午2:00:42
+     *
      */
     public Object invoke(Object... paramValues) throws Exception {
         try {

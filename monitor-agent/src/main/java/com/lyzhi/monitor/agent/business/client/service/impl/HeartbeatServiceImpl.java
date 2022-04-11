@@ -1,10 +1,9 @@
 package com.lyzhi.monitor.agent.business.client.service.impl;
 
-import com.lyzhi.monitor.agent.core.MethodExecuteHandler;
 import com.lyzhi.monitor.agent.business.client.service.IHeartbeatService;
-import com.gitee.pifeng.monitoring.common.dto.BaseResponsePackage;
-import com.gitee.pifeng.monitoring.common.dto.HeartbeatPackage;
-
+import com.lyzhi.monitor.agent.core.MethodExecuteHandler;
+import com.lyzhi.monitor.common.dto.BaseResponsePackage;
+import com.lyzhi.monitor.common.dto.HeartbeatPackage;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,8 +11,6 @@ import org.springframework.stereotype.Service;
  * 心跳服务实现类
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月4日 下午1:44:54
  */
 @Service
 public class HeartbeatServiceImpl implements IHeartbeatService {
@@ -25,8 +22,7 @@ public class HeartbeatServiceImpl implements IHeartbeatService {
      *
      * @param heartbeatPackage 心跳包
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020年3月4日 下午1:47:28
+     *
      */
     @Override
     public BaseResponsePackage dealHeartbeatPackage(HeartbeatPackage heartbeatPackage) {

@@ -19,8 +19,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * 配置Swagger，用于生成、描述、调用和可视化restful风格的web服务
  * </p>
  *
- * @author 皮锋
- * @custom.date 2019年10月30日 下午8:45:23
  */
 @Configuration
 @EnableSwagger2
@@ -40,8 +38,7 @@ public class SwaggerConfig {
      * </p>
      *
      * @return {@link Docket}
-     * @author 皮锋
-     * @custom.date 2020年1月20日 上午10:28:13
+     *
      */
     @Bean
     public Docket createRestApi() {
@@ -66,8 +63,7 @@ public class SwaggerConfig {
      * </p>
      *
      * @return {@link ApiInfo}
-     * @author 皮锋
-     * @custom.date 2020年1月20日 上午9:58:47
+     *
      */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()

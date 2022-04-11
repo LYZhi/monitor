@@ -1,8 +1,8 @@
 package com.lyzhi.monitor.agent.business.client.controller;
 
 import com.lyzhi.monitor.agent.business.client.service.IJvmService;
-import com.gitee.pifeng.monitoring.common.dto.BaseResponsePackage;
-import com.gitee.pifeng.monitoring.common.dto.JvmPackage;
+import com.lyzhi.monitor.common.dto.BaseResponsePackage;
+import com.lyzhi.monitor.common.dto.JvmPackage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
  * Java虚拟机信息控制器
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020/8/15 22:22
  */
 @RestController
 @RequestMapping("/jvm")
@@ -37,8 +35,7 @@ public class JvmController {
      *
      * @param jvmPackage Java虚拟机信息包
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020年3月6日 下午3:00:54
+     *
      */
     @ApiOperation(value = "接收和响应监控客户端程序发的Java虚拟机信息包", notes = "接收Java虚拟机信息包")
     @PostMapping("/accept-jvm-package")

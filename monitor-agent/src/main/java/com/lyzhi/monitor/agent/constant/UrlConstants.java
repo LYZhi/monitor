@@ -1,14 +1,13 @@
 package com.lyzhi.monitor.agent.constant;
 
-import com.gitee.pifeng.monitoring.plug.core.ConfigLoader;
+
+import com.lyzhi.monitor.client.core.core.ConfigLoader;
 
 /**
  * <p>
  * URL
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月6日 下午3:34:20
  */
 public final class UrlConstants {
 
@@ -17,8 +16,6 @@ public final class UrlConstants {
      * 私有化构造方法
      * </p>
      *
-     * @author 皮锋
-     * @custom.date 2020/10/27 13:26
      */
     private UrlConstants() {
     }

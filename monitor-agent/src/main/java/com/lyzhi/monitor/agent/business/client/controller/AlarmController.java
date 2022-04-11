@@ -1,8 +1,8 @@
 package com.lyzhi.monitor.agent.business.client.controller;
 
 import com.lyzhi.monitor.agent.business.client.service.IAlarmService;
-import com.gitee.pifeng.monitoring.common.dto.AlarmPackage;
-import com.gitee.pifeng.monitoring.common.dto.BaseResponsePackage;
+import com.lyzhi.monitor.common.dto.AlarmPackage;
+import com.lyzhi.monitor.common.dto.BaseResponsePackage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 告警控制器
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月6日 下午2:58:09
  */
 @Api(tags = "信息包.告警包")
 @RestController
@@ -37,8 +35,7 @@ public class AlarmController {
      *
      * @param heartbeatPackage 告警包
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020年3月6日 下午3:00:54
+     *
      */
     @ApiOperation(value = "接收和响应监控客户端程序发的告警包", notes = "接收告警包")
     @PostMapping("/accept-alarm-package")

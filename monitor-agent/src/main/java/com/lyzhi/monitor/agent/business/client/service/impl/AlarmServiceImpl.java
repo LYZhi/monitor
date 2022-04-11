@@ -1,10 +1,9 @@
 package com.lyzhi.monitor.agent.business.client.service.impl;
 
-import com.lyzhi.monitor.agent.core.MethodExecuteHandler;
 import com.lyzhi.monitor.agent.business.client.service.IAlarmService;
-import com.gitee.pifeng.monitoring.common.dto.AlarmPackage;
-import com.gitee.pifeng.monitoring.common.dto.BaseResponsePackage;
-
+import com.lyzhi.monitor.agent.core.MethodExecuteHandler;
+import com.lyzhi.monitor.common.dto.AlarmPackage;
+import com.lyzhi.monitor.common.dto.BaseResponsePackage;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,8 +11,6 @@ import org.springframework.stereotype.Service;
  * 告警服务实现
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月6日 下午3:11:11
  */
 @Service
 public class AlarmServiceImpl implements IAlarmService {
@@ -25,8 +22,7 @@ public class AlarmServiceImpl implements IAlarmService {
      *
      * @param heartbeatPackage 告警包
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020年3月6日 下午3:09:12
+     *
      */
     @Override
     public BaseResponsePackage dealAlarmPackage(AlarmPackage heartbeatPackage) {

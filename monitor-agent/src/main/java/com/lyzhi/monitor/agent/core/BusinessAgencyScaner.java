@@ -15,8 +15,6 @@ import lombok.extern.slf4j.Slf4j;
  * 业务代理扫描器，获得代理执行业务的方法，添加到命令执行器管理器
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月4日 下午1:56:33
  */
 @Slf4j
 @Component

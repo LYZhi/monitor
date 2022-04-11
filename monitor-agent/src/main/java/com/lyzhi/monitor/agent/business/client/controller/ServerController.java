@@ -1,8 +1,8 @@
 package com.lyzhi.monitor.agent.business.client.controller;
 
 import com.lyzhi.monitor.agent.business.client.service.IServerService;
-import com.gitee.pifeng.monitoring.common.dto.BaseResponsePackage;
-import com.gitee.pifeng.monitoring.common.dto.ServerPackage;
+import com.lyzhi.monitor.common.dto.BaseResponsePackage;
+import com.lyzhi.monitor.common.dto.ServerPackage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 服务器信息控制器
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月7日 下午5:03:49
  */
 @RestController
 @RequestMapping("/server")
@@ -37,8 +35,7 @@ public class ServerController {
      *
      * @param serverPackage 服务器信息包
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020年3月6日 下午3:00:54
+     *
      */
     @ApiOperation(value = "接收和响应监控客户端程序发的服务器信息包", notes = "接收服务器信息包")
     @PostMapping("/accept-server-package")

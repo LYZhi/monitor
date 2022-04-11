@@ -1,6 +1,6 @@
 package com.lyzhi.monitor.agent.config;
 
-import com.gitee.pifeng.monitoring.common.property.client.MonitoringProperties;
+import com.lyzhi.monitor.common.property.client.MonitoringProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.config.Registry;
@@ -18,11 +18,11 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.DefaultConnectionKeepAliveStrategy;
 import org.apache.http.impl.client.DefaultHttpRequestRetryHandler;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.DefaultHttpResponseParserFactory;
 import org.apache.http.impl.conn.ManagedHttpClientConnectionFactory;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.impl.conn.SystemDefaultDnsResolver;
 import org.apache.http.impl.io.DefaultHttpRequestWriterFactory;
-import org.apache.http.impl.io.DefaultHttpResponseParserFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,8 +38,6 @@ import java.util.concurrent.TimeUnit;
  * 配置RestTemplate，RestTemplate是Spring提供的用于访问Rest服务的客户端，提供了多种便捷访问远程Http服务的方法，能够大大提高客户端的编写效率
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年1月20日 上午10:58:31
  */
 @Configuration
 @Slf4j
@@ -54,8 +52,7 @@ public class RestTemplateConfig {
      * </p>
      *
      * @return {@link RestTemplate}
-     * @author 皮锋
-     * @custom.date 2020年3月4日 下午3:46:33
+     *
      */
     @Bean
     public RestTemplate restTemplate() {
@@ -70,8 +67,7 @@ public class RestTemplateConfig {
      * </p>
      *
      * @return {@link ClientHttpRequestFactory}
-     * @author 皮锋
-     * @custom.date 2021/12/6 16:41
+     *
      */
     @Bean
     public ClientHttpRequestFactory httpRequestFactory() {
@@ -84,8 +80,7 @@ public class RestTemplateConfig {
      * </p>
      *
      * @return {@link CloseableHttpClient}
-     * @author 皮锋
-     * @custom.date 2021/12/6 16:43
+     *
      */
     @Bean
     public CloseableHttpClient httpClient() {

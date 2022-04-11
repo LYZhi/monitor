@@ -1,17 +1,14 @@
 package com.lyzhi.monitor.agent.core;
 
-import com.gitee.pifeng.monitoring.common.domain.Result;
-import com.gitee.pifeng.monitoring.agent.business.server.service.*;
-import com.gitee.pifeng.monitoring.common.dto.*;
-import com.lyzhi.monitor.agent.business.server.service.*;
+import com.lyzhi.monitor.agent.business.client.service.*;
+import com.lyzhi.monitor.common.domain.Result;
+import com.lyzhi.monitor.common.dto.*;
 
 /**
  * <p>
  * 方法执行助手
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月5日 上午10:59:29
  */
 public class MethodExecuteHandler {
 
@@ -20,8 +17,6 @@ public class MethodExecuteHandler {
      * 私有化构造方法
      * </p>
      *
-     * @author 皮锋
-     * @custom.date 2020/10/27 13:26
      */
     private MethodExecuteHandler() {
     }
@@ -33,8 +28,7 @@ public class MethodExecuteHandler {
      *
      * @param heartbeatPackage 心跳包
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020年3月5日 上午11:01:46
+     *
      */
     public static BaseResponsePackage sendHeartbeatPackage2Server(HeartbeatPackage heartbeatPackage) {
         // 通过命令执行器管理器，获取指定的命令执行器
@@ -51,8 +45,7 @@ public class MethodExecuteHandler {
      *
      * @param alarmPackage 告警包
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020年3月6日 下午3:23:56
+     *
      */
     public static BaseResponsePackage sendAlarmPackage2Server(AlarmPackage alarmPackage) {
         // 通过命令执行器管理器，获取指定的命令执行器
@@ -69,8 +62,7 @@ public class MethodExecuteHandler {
      *
      * @param serverPackage 服务器信息包
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020年3月7日 下午5:18:32
+     *
      */
     public static BaseResponsePackage sendServerPackage2Server(ServerPackage serverPackage) {
         // 通过命令执行器管理器，获取指定的命令执行器
@@ -87,8 +79,7 @@ public class MethodExecuteHandler {
      *
      * @param jvmPackage Java虚拟机信息包
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020/8/15 22:09
+     *
      */
     public static BaseResponsePackage sendJvmPackage2Server(JvmPackage jvmPackage) {
         // 通过命令执行器管理器，获取指定的命令执行器
@@ -106,8 +97,7 @@ public class MethodExecuteHandler {
      * @param baseRequestPackage 基础请求包
      * @param url                URL路径
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2021/4/5 14:44
+     *
      */
     public static BaseResponsePackage sendBaseRequestPackage2Server(BaseRequestPackage baseRequestPackage, String url) {
         // 通过命令执行器管理器，获取指定的命令执行器
@@ -125,8 +115,7 @@ public class MethodExecuteHandler {
      * @param invoker 命令执行器-{@link Invoker}
      * @param objects 数据
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020/3/11 22:27
+     *
      */
     private static BaseResponsePackage execute(Invoker invoker, Object... objects) {
         // 执行命令，返回执行结果

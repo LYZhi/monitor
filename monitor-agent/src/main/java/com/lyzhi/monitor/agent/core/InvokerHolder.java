@@ -8,8 +8,6 @@ import java.util.Map;
  * 命令执行器管理器
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月4日 下午2:02:05
  */
 public class InvokerHolder {
 
@@ -18,8 +16,6 @@ public class InvokerHolder {
      * 私有化构造方法
      * </p>
      *
-     * @author 皮锋
-     * @custom.date 2020/10/27 13:26
      */
     private InvokerHolder() {
     }
@@ -37,8 +33,7 @@ public class InvokerHolder {
      * @param clazz  类-{@link Class}
      * @param method 方法
      * @return {@link Invoker}
-     * @author 皮锋
-     * @custom.date 2020年3月4日 下午2:02:18
+     *
      */
     public static Invoker getInvoker(Class<?> clazz, String method) {
         Map<String, Invoker> map = INVOKERS.get(clazz);
@@ -56,8 +51,7 @@ public class InvokerHolder {
      * @param clazz   类-{@link Class}
      * @param method  方法
      * @param invoker 命令执行器-{@link Invoker}
-     * @author 皮锋
-     * @custom.date 2020年3月4日 下午2:02:35
+     *
      */
     public static void addInvoker(Class<?> clazz, String method, Invoker invoker) {
         Map<String, Invoker> map = INVOKERS.computeIfAbsent(clazz, k -> new HashMap<>(16));

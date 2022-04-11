@@ -1,8 +1,8 @@
 package com.lyzhi.monitor.agent.business.client.controller;
 
 import com.lyzhi.monitor.agent.business.client.service.IHeartbeatService;
-import com.gitee.pifeng.monitoring.common.dto.BaseResponsePackage;
-import com.gitee.pifeng.monitoring.common.dto.HeartbeatPackage;
+import com.lyzhi.monitor.common.dto.BaseResponsePackage;
+import com.lyzhi.monitor.common.dto.HeartbeatPackage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 心跳控制器
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月4日 下午12:16:06
  */
 @RestController
 @RequestMapping("/heartbeat")
@@ -37,8 +35,7 @@ public class HeartbeatController {
      *
      * @param heartbeatPackage 心跳包
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020年3月4日 下午12:27:47
+     *
      */
     @ApiOperation(value = "接收和响应监控客户端程序发的心跳包", notes = "接收心跳包")
     @PostMapping("/accept-heartbeat-package")

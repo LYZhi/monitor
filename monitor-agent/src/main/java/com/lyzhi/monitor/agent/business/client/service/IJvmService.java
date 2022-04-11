@@ -1,15 +1,13 @@
 package com.lyzhi.monitor.agent.business.client.service;
 
-import com.gitee.pifeng.monitoring.common.dto.BaseResponsePackage;
-import com.gitee.pifeng.monitoring.common.dto.JvmPackage;
+import com.lyzhi.monitor.common.dto.BaseResponsePackage;
+import com.lyzhi.monitor.common.dto.JvmPackage;
 
 /**
  * <p>
  * Java虚拟机信息服务接口
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020/8/15 22:23
  */
 public interface IJvmService {
 
@@ -20,8 +18,7 @@ public interface IJvmService {
      *
      * @param jvmPackage Java虚拟机信息包
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020年3月7日 下午5:14:29
+     *
      */
     BaseResponsePackage dealJvmPackage(JvmPackage jvmPackage);
 

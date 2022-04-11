@@ -1,10 +1,9 @@
 package com.lyzhi.monitor.agent.business.client.service.impl;
 
-import com.lyzhi.monitor.agent.core.MethodExecuteHandler;
 import com.lyzhi.monitor.agent.business.client.service.IServerService;
-import com.gitee.pifeng.monitoring.common.dto.BaseResponsePackage;
-import com.gitee.pifeng.monitoring.common.dto.ServerPackage;
-
+import com.lyzhi.monitor.agent.core.MethodExecuteHandler;
+import com.lyzhi.monitor.common.dto.BaseResponsePackage;
+import com.lyzhi.monitor.common.dto.ServerPackage;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,8 +11,6 @@ import org.springframework.stereotype.Service;
  * 服务器信息服务实现
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月7日 下午5:16:30
  */
 @Service
 public class ServerServiceImpl implements IServerService {
@@ -25,8 +22,7 @@ public class ServerServiceImpl implements IServerService {
      *
      * @param serverPackage 服务器信息包
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020年3月7日 下午5:14:29
+     *
      */
     @Override
     public BaseResponsePackage dealServerPackage(ServerPackage serverPackage) {

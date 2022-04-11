@@ -2,8 +2,8 @@ package com.lyzhi.monitor.agent.business.client.service.impl;
 
 import com.lyzhi.monitor.agent.business.client.service.IBaseRequestPackageService;
 import com.lyzhi.monitor.agent.core.MethodExecuteHandler;
-import com.gitee.pifeng.monitoring.common.dto.BaseRequestPackage;
-import com.gitee.pifeng.monitoring.common.dto.BaseResponsePackage;
+import com.lyzhi.monitor.common.dto.BaseRequestPackage;
+import com.lyzhi.monitor.common.dto.BaseResponsePackage;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,8 +11,6 @@ import org.springframework.stereotype.Service;
  * 基础请求包服务实现
  * </p>
  *
- * @author 皮锋
- * @custom.date 2021/4/5 14:34
  */
 @Service
 public class BaseRequestPackageServiceImpl implements IBaseRequestPackageService {
@@ -25,8 +23,7 @@ public class BaseRequestPackageServiceImpl implements IBaseRequestPackageService
      * @param baseRequestPackage 基础请求包
      * @param url                URL路径
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020年3月6日 下午3:09:12
+     *
      */
     @Override
     public BaseResponsePackage dealBaseRequestPackage(BaseRequestPackage baseRequestPackage, String url) {

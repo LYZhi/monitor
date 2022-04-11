@@ -1,15 +1,13 @@
 package com.lyzhi.monitor.agent.business.client.service;
 
-import com.gitee.pifeng.monitoring.common.dto.AlarmPackage;
-import com.gitee.pifeng.monitoring.common.dto.BaseResponsePackage;
+import com.lyzhi.monitor.common.dto.AlarmPackage;
+import com.lyzhi.monitor.common.dto.BaseResponsePackage;
 
 /**
  * <p>
  * 告警服务接口
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月6日 下午3:07:24
  */
 public interface IAlarmService {
 

@@ -1,16 +1,16 @@
 package com.lyzhi.monitor.agent.core;
 
 import cn.hutool.core.util.IdUtil;
-import com.gitee.pifeng.monitoring.common.abs.AbstractPackageConstructor;
-import com.gitee.pifeng.monitoring.common.constant.EndpointTypeEnums;
-import com.gitee.pifeng.monitoring.common.constant.LanguageTypeConstants;
-import com.gitee.pifeng.monitoring.common.domain.Result;
-import com.gitee.pifeng.monitoring.common.dto.BaseResponsePackage;
-import com.gitee.pifeng.monitoring.common.util.AppServerDetectorUtils;
-import com.gitee.pifeng.monitoring.common.util.server.NetUtils;
-import com.gitee.pifeng.monitoring.common.util.server.OsUtils;
-import com.gitee.pifeng.monitoring.plug.core.ConfigLoader;
-import com.gitee.pifeng.monitoring.plug.util.InstanceUtils;
+import com.lyzhi.monitor.client.core.core.ConfigLoader;
+import com.lyzhi.monitor.client.core.util.InstanceUtils;
+import com.lyzhi.monitor.common.abs.AbstractPackageConstructor;
+import com.lyzhi.monitor.common.constant.EndpointTypeEnums;
+import com.lyzhi.monitor.common.constant.LanguageTypeConstants;
+import com.lyzhi.monitor.common.domain.Result;
+import com.lyzhi.monitor.common.dto.BaseResponsePackage;
+import com.lyzhi.monitor.common.util.AppServerDetectorUtils;
+import com.lyzhi.monitor.common.util.server.NetUtils;
+import com.lyzhi.monitor.common.util.server.OsUtils;
 import lombok.SneakyThrows;
 
 import java.util.Date;
@@ -21,8 +21,6 @@ import java.util.TreeSet;
  * 包构造器
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月8日 下午12:16:59
  */
 public class PackageConstructor extends AbstractPackageConstructor {
 
@@ -33,8 +31,7 @@ public class PackageConstructor extends AbstractPackageConstructor {
      *
      * @param result 返回结果
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2020年3月11日 上午9:52:48
+     *
      */
     @SneakyThrows
     @Override

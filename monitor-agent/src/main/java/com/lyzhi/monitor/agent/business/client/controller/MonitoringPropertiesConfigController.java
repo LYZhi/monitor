@@ -2,8 +2,8 @@ package com.lyzhi.monitor.agent.business.client.controller;
 
 import com.lyzhi.monitor.agent.business.client.service.IBaseRequestPackageService;
 import com.lyzhi.monitor.agent.constant.UrlConstants;
-import com.gitee.pifeng.monitoring.common.dto.BaseRequestPackage;
-import com.gitee.pifeng.monitoring.common.dto.BaseResponsePackage;
+import com.lyzhi.monitor.common.dto.BaseRequestPackage;
+import com.lyzhi.monitor.common.dto.BaseResponsePackage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 监控属性配置控制器
  * </p>
  *
- * @author 皮锋
- * @custom.date 2021/4/5 14:17
  */
 @Api(tags = "监控属性配置")
 @RestController
@@ -38,8 +36,7 @@ public class MonitoringPropertiesConfigController {
      *
      * @param baseRequestPackage 基础请求包
      * @return {@link BaseResponsePackage}
-     * @author 皮锋
-     * @custom.date 2021/4/5 14:19
+     *
      */
     @ApiOperation(value = "刷新监控配置属性", notes = "刷新监控配置属性")
     @PostMapping("/refresh")

@@ -11,8 +11,6 @@ import org.springframework.boot.web.server.WebServerFactoryCustomizer;
  * 去掉Undertow的“Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used”警告。
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020/8/25 10:19
  */
 public class CustomizationBeanHandler implements WebServerFactoryCustomizer<UndertowServletWebServerFactory> {
 
@@ -22,8 +20,7 @@ public class CustomizationBeanHandler implements WebServerFactoryCustomizer<Unde
      * </p>
      *
      * @param factory web服务器工厂
-     * @author 皮锋
-     * @custom.date 2020/8/25 10:21
+     *
      */
     @Override
     public void customize(UndertowServletWebServerFactory factory) {

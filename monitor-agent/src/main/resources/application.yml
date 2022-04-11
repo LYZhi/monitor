@@ -1,0 +1,75 @@
+##############################################server??#################################################
+server:
+  servlet:
+    context-path: /monitor-agent
+  undertow:
+    accesslog:
+      #Undertow??????
+      dir: monitorlog/logs/monitor-agent
+      #??????
+      enabled: true
+      #????
+      pattern: common
+      #???????
+      #prefix: access_log
+      #???????
+      #suffix: log
+  #??????
+  shutdown: graceful
+
+
+###############################################????####################################################
+logging:
+  config: classpath:logback-spring.xml
+  #????????????info
+  level:
+    com.gitee.pifeng.monitoring: info
+    oshi: error
+
+
+###############################################spring??#################################################
+spring:
+  mvc:
+    async:
+      #????????
+      request-timeout: 5000
+  jackson:
+    #????
+    time-zone: GMT+8
+  #main:
+  #???????bean???
+  #allow-bean-definition-overriding: true
+  application:
+    name: monitor-agent
+  profiles:
+    active:
+      - dev
+  devtools:
+    livereload:
+      port: 35730
+  lifecycle:
+    #????????????
+    timeout-per-shutdown-phase: 30s
+
+
+############################################springboot????#############################################
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: shutdown
+  server:
+    #???????????????????
+    address: 127.0.0.1
+
+
+##############################################swagger????##############################################
+swagger:
+  #production: true
+  basic:
+    enable: true
+    username: admin
+    password: admin

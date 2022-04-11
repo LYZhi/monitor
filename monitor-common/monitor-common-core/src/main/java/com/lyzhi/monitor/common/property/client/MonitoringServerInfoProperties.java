@@ -1,0 +1,32 @@
+package com.lyzhi.monitor.common.property.client;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
+/**
+ * 服务器信息属性
+ */
+@Data
+@ToString
+@NoArgsConstructor
+@Accessors(chain = true)
+public class MonitoringServerInfoProperties {
+
+    /**
+     * 是否采集服务器信息
+     */
+    private boolean enable;
+
+    /**
+     * 发送服务器信息的频率
+     */
+    private long rate;
+
+    /**
+     * 服务器本机IP地址
+     */
+    private String ip;
+
+}

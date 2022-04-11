@@ -1,0 +1,42 @@
+package com.lyzhi.monitor.common.property.client;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
+/**
+ * 与自己相关的监控属性
+ */
+@Data
+@ToString
+@NoArgsConstructor
+@Accessors(chain = true)
+public class MonitoringOwnProperties {
+
+    /**
+     * 实例次序（不能重复）
+     */
+    private int instanceOrder;
+
+    /**
+     * 实例端点类型（服务端、代理端、客户端、UI端）
+     */
+    private String instanceEndpoint;
+
+    /**
+     * 实例名称
+     */
+    private String instanceName;
+
+    /**
+     * 实例描述
+     */
+    private String instanceDesc;
+
+    /**
+     * 程序语言
+     */
+    private String instanceLanguage;
+
+}

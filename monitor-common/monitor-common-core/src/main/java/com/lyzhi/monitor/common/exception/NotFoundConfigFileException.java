@@ -1,7 +1,10 @@
 package com.lyzhi.monitor.common.exception;
 
 /**
+ * <p>
  * 找不到配置文件异常
+ * </p>
+ *
  */
 public class NotFoundConfigFileException extends MonitoringUniversalException {
 

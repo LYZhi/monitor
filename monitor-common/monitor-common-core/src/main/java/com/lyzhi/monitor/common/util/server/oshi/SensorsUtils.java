@@ -1,10 +1,9 @@
 package com.lyzhi.monitor.common.util.server.oshi;
 
-
 import cn.hutool.core.util.NumberUtil;
-import com.google.common.collect.Lists;
 import com.lyzhi.monitor.common.domain.server.SensorsDomain;
 import com.lyzhi.monitor.common.init.InitOshi;
+import com.google.common.collect.Lists;
 import oshi.hardware.HardwareAbstractionLayer;
 import oshi.hardware.Sensors;
 
@@ -23,6 +22,7 @@ public class SensorsUtils extends InitOshi {
      * 私有化构造方法
      * </p>
      *
+
      */
     private SensorsUtils() {
     }
@@ -33,7 +33,7 @@ public class SensorsUtils extends InitOshi {
      * </p>
      *
      * @return {@link SensorsDomain}
-     *
+
      */
     public static SensorsDomain getSensorsInfo() {
         HardwareAbstractionLayer hardwareAbstractionLayer = SYSTEM_INFO.getHardware();

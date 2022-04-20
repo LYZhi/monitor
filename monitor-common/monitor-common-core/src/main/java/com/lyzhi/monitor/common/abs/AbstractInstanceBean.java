@@ -20,7 +20,8 @@ import java.util.TreeSet;
 @ToString
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
-public abstract class AbstractInstanceBean extends AbstractSuperBean {
+public abstract class
+AbstractInstanceBean extends AbstractSuperBean {
 
     /**
      * 应用实例端点（服务端、代理端、客户端、UI端）

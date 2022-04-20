@@ -1,6 +1,5 @@
 package com.lyzhi.monitor.agent.config;
 
-import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +21,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-@EnableSwaggerBootstrapUI
 @Slf4j
 @Profile({"dev", "test"})
 public class SwaggerConfig {
@@ -30,7 +28,7 @@ public class SwaggerConfig {
     /**
      * Swagger要扫描的包路径
      */
-    private static final String BASE_PACKAGE = "com.gitee.pifeng.monitoring.agent.business";
+    private static final String BASE_PACKAGE = "com.lyzhi.monitor.agent.business";
 
     /**
      * <p>

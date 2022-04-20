@@ -5,7 +5,10 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
+ * <p>
  * 应用服务器类型
+ * </p>
+ *
  */
 @Getter
 @ToString

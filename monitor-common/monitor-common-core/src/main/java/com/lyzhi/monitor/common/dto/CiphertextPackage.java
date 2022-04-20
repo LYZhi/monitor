@@ -1,6 +1,5 @@
 package com.lyzhi.monitor.common.dto;
 
-
 import com.lyzhi.monitor.common.abs.AbstractSuperBean;
 import lombok.*;
 import lombok.experimental.Accessors;

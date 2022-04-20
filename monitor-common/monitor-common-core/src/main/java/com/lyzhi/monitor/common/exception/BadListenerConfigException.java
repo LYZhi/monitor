@@ -1,7 +1,10 @@
 package com.lyzhi.monitor.common.exception;
 
 /**
+ * <p>
  * 错误的监听器配置异常
+ * </p>
+ *
  */
 public class BadListenerConfigException extends MonitoringUniversalException {
 

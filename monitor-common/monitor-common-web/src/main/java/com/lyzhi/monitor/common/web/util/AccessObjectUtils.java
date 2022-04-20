@@ -11,6 +11,8 @@ import java.net.UnknownHostException;
  * 访问对象工具类
  * </p>
  *
+ * @author 皮锋
+ * @custom.date 2021/6/10 14:04
  */
 @Slf4j
 public class AccessObjectUtils {
@@ -28,6 +30,8 @@ public class AccessObjectUtils {
      *
      * @param request 请求对象
      * @return IP地址
+     * @author 皮锋
+     * @custom.date 2021/6/10 14:07
      */
     public static String getClientAddress(HttpServletRequest request) {
         String ipAddress = request.getHeader("x-forwarded-for");

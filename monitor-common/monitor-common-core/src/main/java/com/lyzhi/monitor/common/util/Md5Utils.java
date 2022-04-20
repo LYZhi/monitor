@@ -24,6 +24,7 @@ public final class Md5Utils {
      * 私有化构造方法
      * </p>
      *
+
      */
     private Md5Utils() {
     }
@@ -35,7 +36,7 @@ public final class Md5Utils {
      *
      * @param encryptStr 字符串
      * @return 32位md5校验码
-     *
+
      */
     @SneakyThrows
     public static String encrypt32(String encryptStr) {
@@ -59,7 +60,7 @@ public final class Md5Utils {
      *
      * @param encryptStr 字符串
      * @return 16位md5校验码
-     *
+
      */
     public static String encrypt16(String encryptStr) {
         return encrypt32(encryptStr).substring(8, 24);
@@ -72,7 +73,7 @@ public final class Md5Utils {
      *
      * @param encryptStr 字符串
      * @return md5校验码
-     *
+
      */
     public static String encrypt(String encryptStr) {
         // 默认使用16位md5校验码

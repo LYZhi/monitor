@@ -1,7 +1,10 @@
 package com.lyzhi.monitor.common.exception;
 
 /**
+ * <p>
  * 自定义数据库异常
+ * </p>
+ *
  */
 public class DbException extends MonitoringUniversalException {
 

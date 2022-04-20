@@ -22,7 +22,7 @@ public enum EnterpriseEnums {
      *
      * @param enterpriseStr 企业名字符串
      * @return 企业名字枚举
-     *
+
      */
     public static EnterpriseEnums str2Enum(String enterpriseStr) {
         // phoenix

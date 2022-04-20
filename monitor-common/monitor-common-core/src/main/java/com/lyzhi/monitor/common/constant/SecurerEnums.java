@@ -1,6 +1,5 @@
 package com.lyzhi.monitor.common.constant;
 
-
 import com.lyzhi.monitor.common.inf.ISecurer;
 import com.lyzhi.monitor.common.util.secure.AesEncryptUtils;
 import com.lyzhi.monitor.common.util.secure.DesEncryptUtils;

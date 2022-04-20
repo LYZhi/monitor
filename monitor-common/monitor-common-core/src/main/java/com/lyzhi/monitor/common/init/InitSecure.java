@@ -26,7 +26,7 @@ public class InitSecure {
      * </p>
      *
      * @return 加解密配置属性
-     *
+
      */
     private static Props init() {
         Props props = new Props("monitoring-secure.properties", StandardCharsets.UTF_8);

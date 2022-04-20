@@ -27,7 +27,7 @@ public class SecureUtils extends InitSecure {
      * @param str     需要加密的字符串
      * @param charset 字符集
      * @return 加密后的字符串
-     *
+
      */
     public static String encrypt(String str, Charset charset) {
         // 没选择加解密类型，则不加密
@@ -44,7 +44,7 @@ public class SecureUtils extends InitSecure {
      *
      * @param arry 需要加密的字节数组
      * @return 加密后的字符串
-     *
+
      */
     public static String encrypt(byte[] arry) {
         // 没选择加解密类型，则不加密
@@ -62,7 +62,7 @@ public class SecureUtils extends InitSecure {
      * @param str     需要解密的字符串
      * @param charset 字符集
      * @return 解密后的字符串
-     *
+
      */
     public static String decrypt(String str, Charset charset) {
         // 没选择加解密类型，则不解密
@@ -79,7 +79,7 @@ public class SecureUtils extends InitSecure {
      *
      * @param str 需要解密的字符串
      * @return 解密后的字节数组
-     *
+
      */
     @SneakyThrows
     public static byte[] decrypt(String str) {
@@ -98,7 +98,7 @@ public class SecureUtils extends InitSecure {
      * @param algorithm 算法，支持PBE算法
      * @param keySize   密钥长度，&lt;0表示不设定密钥长度，即使用默认长度
      * @return 明文秘钥字符串
-     *
+
      */
     public static String generateKey(String algorithm, int keySize) {
         return Base64.getEncoder().encodeToString(KeyUtil.generateKey(algorithm, keySize).getEncoded());

@@ -1,7 +1,9 @@
 package com.lyzhi.monitor.common.exception;
 
 /**
+ * <p>
  * 错误的配置参数异常
+ * </p>
  *
  */
 public class ErrorConfigParamException extends MonitoringUniversalException {

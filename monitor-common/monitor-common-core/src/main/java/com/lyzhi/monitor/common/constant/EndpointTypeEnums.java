@@ -5,7 +5,10 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
+ * <p>
  * 端点类型（服务端、代理端、客户端、UI端）
+ * </p>
+ *
  */
 @Getter
 @ToString
@@ -30,7 +33,7 @@ public enum EndpointTypeEnums {
     /**
      * UI端
      */
-    UI("ui", "UI端");
+   WEB("web", "web端");
 
     /**
      * 英文名字

@@ -73,7 +73,7 @@
 
 	<!-- 构建 -->
 	<build>
-		<finalName>phoenix-agent</finalName>
+		<finalName>monitor-agent</finalName>
 		<defaultGoal>package</defaultGoal>
 		<plugins>
 			<plugin>
@@ -81,7 +81,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<!-- 指定该Main Class为全局的唯一入口 -->
-					<mainClass>com.lyzhi.monitor.agent.MonitorAgentApplication</mainClass>
+					<mainClass>com.lyzhi.monitor.agent.AgentApplication</mainClass>
 				</configuration>
 			</plugin>
 			<!-- sonatype的staging插件 -->

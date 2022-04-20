@@ -1,7 +1,9 @@
 package com.lyzhi.monitor.common.exception;
 
 /**
+ * <p>
  * 自定义获取网络信息异常
+ * </p>
  *
  */
 public class NetException extends MonitoringUniversalException {

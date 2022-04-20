@@ -1,6 +1,5 @@
 package com.lyzhi.monitor.common.property.server;
 
-
 import com.lyzhi.monitor.common.constant.AlarmLevelEnums;
 import com.lyzhi.monitor.common.inf.ISuperBean;
 import lombok.*;

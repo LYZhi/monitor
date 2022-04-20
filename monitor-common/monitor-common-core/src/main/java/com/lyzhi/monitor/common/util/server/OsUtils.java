@@ -32,6 +32,7 @@ public final class OsUtils {
      * 私有化构造方法
      * </p>
      *
+
      */
     private OsUtils() {
     }
@@ -42,7 +43,7 @@ public final class OsUtils {
      * </p>
      *
      * @return boolean
-     *
+
      */
     public static boolean isWindowsOs() {
         boolean isWindowsOs = false;
@@ -59,7 +60,7 @@ public final class OsUtils {
      * </p>
      *
      * @return {@link OsDomain}
-     *
+
      */
     public static OsDomain getOsInfo() {
         Calendar cal = Calendar.getInstance();
@@ -80,7 +81,7 @@ public final class OsUtils {
      * </p>
      *
      * @return 计算机名
-     *
+
      */
     public static String getComputerName() {
         // Windows操作系统

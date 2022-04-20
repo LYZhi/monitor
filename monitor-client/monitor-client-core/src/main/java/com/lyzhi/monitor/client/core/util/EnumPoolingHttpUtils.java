@@ -40,6 +40,10 @@ import java.util.concurrent.TimeUnit;
  * HTTP线程池工具类
  * </p>
  * 参考：https://blog.csdn.net/lovomap151/article/details/78879904
+ *
+ * @author 皮锋
+ * @custom.date 2021/12/5 18:33
+ * @since 1.0.0
  */
 @Slf4j
 public class EnumPoolingHttpUtils {
@@ -71,6 +75,8 @@ public class EnumPoolingHttpUtils {
          * </p>
          *
          * @return {@link EnumPoolingHttpUtils}
+         * @author 皮锋
+         * @custom.date 2020/8/22 9:11
          */
         private EnumPoolingHttpUtils getInstance() {
             return instance;
@@ -83,6 +89,8 @@ public class EnumPoolingHttpUtils {
      * </p>
      *
      * @return {@link EnumPoolingHttpUtils}
+     * @author 皮锋
+     * @custom.date 2020/8/22 9:11
      */
     public static EnumPoolingHttpUtils getInstance() {
         return Singleton.INSTANCE.getInstance();
@@ -118,15 +126,21 @@ public class EnumPoolingHttpUtils {
         manager.setDefaultMaxPerRoute(200);
         // 在从连接池获取连接时，连接不活跃多长时间后需要进行一次验证，默认为2s
         manager.setValidateAfterInactivity(30 * 1000);
+        int connectTimeout = ConfigLoader.MONITORING_PROPERTIES.getServerProperties().getConnectTimeout();
+        int socketTimeout = ConfigLoader.MONITORING_PROPERTIES.getServerProperties().getSocketTimeout();
+        int connectionRequestTimeout = ConfigLoader.MONITORING_PROPERTIES.getServerProperties().getConnectionRequestTimeout();
         //默认请求配置
         RequestConfig defaultRequestConfig = RequestConfig.custom()
                 // 设置连接超时时间，15s
-                .setConnectTimeout(ConfigLoader.MONITORING_PROPERTIES.getServerProperties().getConnectTimeout())
+                .setConnectTimeout(connectTimeout)
                 // 设置等待数据超时时间，15s
-                .setSocketTimeout(ConfigLoader.MONITORING_PROPERTIES.getServerProperties().getSocketTimeout())
+                .setSocketTimeout(socketTimeout)
                 // 设置从连接池获取连接的等待超时时间,15s
-                .setConnectionRequestTimeout(ConfigLoader.MONITORING_PROPERTIES.getServerProperties().getConnectionRequestTimeout())
+                .setConnectionRequestTimeout(connectionRequestTimeout)
                 .build();
+        log.info("http connect timeout:{}ms", connectTimeout);
+        log.info("http socket timeout:{}ms", socketTimeout);
+        log.info("http connection request timeout:{}ms", connectionRequestTimeout);
         // 创建HttpClient
         httpClient = HttpClients.custom()
                 .setConnectionManager(manager)
@@ -152,10 +166,10 @@ public class EnumPoolingHttpUtils {
             try {
                 if (httpClient != null) {
                     httpClient.close();
-                    log.info("HTTP连接关闭成功！");
+                    log.info("HTTP连接池关闭成功！");
                 }
             } catch (IOException e) {
-                log.error("HTTP连接关闭时发生错误：", e);
+                log.error("HTTP连接池关闭时发生错误：", e);
             }
         }));
         log.info("HTTP连接池初始化成功！");
@@ -170,6 +184,8 @@ public class EnumPoolingHttpUtils {
      * @param json JSON字符串格式的数据
      * @return 返回数据
      * @throws IOException IO异常
+     * @author 皮锋
+     * @custom.date 2020年3月5日 下午5:33:56
      */
     public String sendHttpPostByJson(String url, String json) throws IOException {
         HttpPost httpPost = new HttpPost(url);

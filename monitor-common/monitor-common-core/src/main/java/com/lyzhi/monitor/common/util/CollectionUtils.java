@@ -18,6 +18,7 @@ public class CollectionUtils {
      * 私有化构造方法
      * </p>
      *
+
      */
     private CollectionUtils() {
     }
@@ -30,7 +31,7 @@ public class CollectionUtils {
      * @param <T>          泛型
      * @param keyExtractor 去重条件
      * @return {@link Predicate}
-     *
+
      */
     public static <T> Predicate<T> distinctByKey(Function<? super T, Object> keyExtractor) {
         Map<Object, Boolean> seen = new ConcurrentHashMap<>(16);

@@ -1,6 +1,5 @@
 package com.lyzhi.monitor.agent.constant;
 
-
 import com.lyzhi.monitor.client.core.core.ConfigLoader;
 
 /**
@@ -15,6 +14,7 @@ public final class UrlConstants {
      * <p>
      * 私有化构造方法
      * </p>
+     *
      *
      */
     private UrlConstants() {

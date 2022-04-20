@@ -42,15 +42,15 @@ import java.util.concurrent.*;
  *      </dd>
  * </dl>
  *
- *
  */
 public class ThreadPool {
 
     /**
-     *
+     * <p>
      * 私有化构造方法。
+     * </p>
      *
-     *
+
      */
     private ThreadPool() {
     }

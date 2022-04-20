@@ -32,6 +32,7 @@ public class GarbageCollectorDomain extends AbstractSuperBean {
      * 详细GC信息
      * </p>
      *
+
      */
     @Data
     @Builder

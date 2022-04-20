@@ -1,7 +1,10 @@
 package com.lyzhi.monitor.common.constant;
 
 /**
+ * <p>
  * 告警原因
+ * </p>
+ *
  */
 public enum AlarmReasonEnums {
 

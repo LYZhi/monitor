@@ -6,7 +6,10 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 
 /**
+ * <p>
  * Java虚拟机信息属性
+ * </p>
+ *
  */
 @Data
 @ToString

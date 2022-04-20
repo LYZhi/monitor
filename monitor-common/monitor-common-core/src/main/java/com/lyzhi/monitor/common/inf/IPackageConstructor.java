@@ -7,7 +7,10 @@ import com.lyzhi.monitor.common.exception.NetException;
 import org.hyperic.sigar.SigarException;
 
 /**
+ * <p>
  * 包构造器接口
+ * </p>
+ *
  */
 public interface IPackageConstructor {
 
@@ -20,6 +23,7 @@ public interface IPackageConstructor {
      * @return {@link AlarmPackage}
      * @throws NetException   获取网络信息异常
      * @throws SigarException Sigar异常
+
      */
     AlarmPackage structureAlarmPackage(Alarm alarm) throws NetException, SigarException;
 
@@ -31,6 +35,7 @@ public interface IPackageConstructor {
      * @return {@link HeartbeatPackage}
      * @throws NetException   获取网络信息异常
      * @throws SigarException Sigar异常
+
      */
     HeartbeatPackage structureHeartbeatPackage() throws NetException, SigarException;
 
@@ -42,6 +47,7 @@ public interface IPackageConstructor {
      * @return {@link ServerPackage}
      * @throws SigarException Sigar异常
      * @throws NetException   获取网络信息异常
+
      */
     ServerPackage structureServerPackage() throws SigarException, NetException;
 
@@ -53,6 +59,7 @@ public interface IPackageConstructor {
      * @return {@link JvmPackage}
      * @throws NetException   获取网络信息异常
      * @throws SigarException Sigar异常
+
      */
     JvmPackage structureJvmPackage() throws NetException, SigarException;
 
@@ -63,6 +70,7 @@ public interface IPackageConstructor {
      *
      * @param result 返回结果
      * @return {@link BaseResponsePackage}
+
      */
     BaseResponsePackage structureBaseResponsePackage(Result result);
 
@@ -74,6 +82,7 @@ public interface IPackageConstructor {
      * @return {@link BaseRequestPackage}
      * @throws NetException   自定义获取网络信息异常
      * @throws SigarException Sigar异常
+
      */
     BaseRequestPackage structureBaseRequestPackage() throws NetException, SigarException;
 

@@ -3,9 +3,9 @@ package com.lyzhi.monitor.common.util.server.oshi;
 import cn.hutool.core.date.BetweenFormatter;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.NumberUtil;
-import com.google.common.collect.Lists;
 import com.lyzhi.monitor.common.domain.server.ProcessDomain;
 import com.lyzhi.monitor.common.init.InitOshi;
+import com.google.common.collect.Lists;
 import org.apache.commons.collections.CollectionUtils;
 import oshi.software.os.OSProcess;
 import oshi.software.os.OperatingSystem;
@@ -30,6 +30,7 @@ public class ProcessUtils extends InitOshi {
      * 私有化构造方法
      * </p>
      *
+
      */
     private ProcessUtils() {
     }
@@ -41,7 +42,7 @@ public class ProcessUtils extends InitOshi {
      * 进程信息 = CPU占用率排名前10进程信息 + 内存占用率排名前10进程信息；总数小于等于20个进程信息，因为做了去重操作。
      *
      * @return {@link ProcessDomain}
-     *
+
      */
     public static ProcessDomain getProcessInfo() {
         // 构建返回值
@@ -74,7 +75,7 @@ public class ProcessUtils extends InitOshi {
      * </p>
      *
      * @return {@link ProcessDomain.ProcessInfoDomain}
-     *
+
      */
     public static List<ProcessDomain.ProcessInfoDomain> getProcessOccupyCpuTop10Info() {
         OperatingSystem os = SYSTEM_INFO.getOperatingSystem();
@@ -90,7 +91,7 @@ public class ProcessUtils extends InitOshi {
      * </p>
      *
      * @return {@link ProcessDomain}
-     *
+
      */
     public static List<ProcessDomain.ProcessInfoDomain> getProcessOccupyMemoryTop10Info() {
         OperatingSystem os = SYSTEM_INFO.getOperatingSystem();
@@ -107,7 +108,7 @@ public class ProcessUtils extends InitOshi {
      *
      * @param processes 进程列表
      * @return {@link ProcessDomain.ProcessInfoDomain}
-     *
+
      */
     private static List<ProcessDomain.ProcessInfoDomain> wrapProcessInfoDomainList(List<OSProcess> processes) {
         List<ProcessDomain.ProcessInfoDomain> processInfoList = Lists.newArrayList();
@@ -161,7 +162,7 @@ public class ProcessUtils extends InitOshi {
      * </p>
      *
      * @return 正在运行的进程数
-     *
+
      */
     public static int getTotalProcess() {
         OperatingSystem os = SYSTEM_INFO.getOperatingSystem();

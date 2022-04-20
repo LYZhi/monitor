@@ -2,9 +2,9 @@ package com.lyzhi.monitor.common.util.jvm;
 
 import cn.hutool.core.date.BetweenFormatter;
 import cn.hutool.core.date.DateUtil;
-import com.google.common.collect.Lists;
 import com.lyzhi.monitor.common.domain.Jvm;
 import com.lyzhi.monitor.common.domain.jvm.*;
+import com.google.common.collect.Lists;
 
 import java.lang.management.*;
 import java.util.Date;
@@ -25,6 +25,7 @@ public class JvmUtils {
      * 私有化构造方法
      * </p>
      *
+
      */
     private JvmUtils() {
     }
@@ -65,7 +66,7 @@ public class JvmUtils {
      * </p>
      *
      * @return JVM运行时信息
-     *
+
      */
     public static RuntimeDomain getRuntimeInfo() {
         return RuntimeDomain.builder()
@@ -93,7 +94,7 @@ public class JvmUtils {
      * </p>
      *
      * @return 线程信息
-     *
+
      */
     public static ThreadDomain getThreadInfo() {
         return ThreadDomain.builder()
@@ -110,7 +111,7 @@ public class JvmUtils {
      * </p>
      *
      * @return 类加载信息
-     *
+
      */
     public static ClassLoadingDomain getClassLoadingInfo() {
         return ClassLoadingDomain.builder()
@@ -127,7 +128,7 @@ public class JvmUtils {
      * </p>
      *
      * @return 内存信息
-     *
+
      */
     public static MemoryDomain getMemoryInfo() {
         MemoryUsage heapMemoryUsage = MEMORYMX_BEAN.getHeapMemoryUsage();
@@ -156,7 +157,7 @@ public class JvmUtils {
      *
      * @param memoryUsage 内存使用量
      * @return {@link MemoryDomain.MemoryUsageDomain}
-     *
+
      */
     private static MemoryDomain.MemoryUsageDomain wrapMemoryUsageDomain(MemoryUsage memoryUsage) {
         MemoryDomain.MemoryUsageDomain nonHeapMemoryUsageDomain = new MemoryDomain.MemoryUsageDomain();
@@ -173,7 +174,7 @@ public class JvmUtils {
      * </p>
      *
      * @return GC信息
-     *
+
      */
     public static GarbageCollectorDomain getGarbageCollectorInfo() {
         List<GarbageCollectorDomain.GarbageCollectorInfoDomain> garbageCollectorInfoDomains = Lists.newLinkedList();
@@ -196,7 +197,7 @@ public class JvmUtils {
      * </p>
      *
      * @return Java虚拟机信息
-     *
+
      */
     public static Jvm getJvmInfo() {
         return Jvm.builder()

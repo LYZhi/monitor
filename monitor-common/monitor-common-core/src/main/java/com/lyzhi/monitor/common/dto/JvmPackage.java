@@ -1,6 +1,5 @@
 package com.lyzhi.monitor.common.dto;
 
-
 import com.lyzhi.monitor.common.domain.Jvm;
 import lombok.*;
 import lombok.experimental.Accessors;

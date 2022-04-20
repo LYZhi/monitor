@@ -12,7 +12,6 @@ import org.hyperic.sigar.SigarException;
  * 包构造器抽象类，提供对包构造器接口方法的默认实现。
  * </p>
  *
- *
  */
 public class AbstractPackageConstructor implements IPackageConstructor {
     /**
@@ -24,7 +23,7 @@ public class AbstractPackageConstructor implements IPackageConstructor {
      * @return {@link AlarmPackage}
      * @throws NetException   获取网络信息异常
      * @throws SigarException Sigar异常
-     *
+
      */
     @Override
     public AlarmPackage structureAlarmPackage(Alarm alarm) throws NetException, SigarException {
@@ -39,7 +38,7 @@ public class AbstractPackageConstructor implements IPackageConstructor {
      * @return {@link HeartbeatPackage}
      * @throws NetException   获取网络信息异常
      * @throws SigarException Sigar异常
-     *
+
      */
     @Override
     public HeartbeatPackage structureHeartbeatPackage() throws NetException, SigarException {
@@ -54,7 +53,7 @@ public class AbstractPackageConstructor implements IPackageConstructor {
      * @return {@link ServerPackage}
      * @throws SigarException Sigar异常
      * @throws NetException   获取网络信息异常
-     *
+
      */
     @Override
     public ServerPackage structureServerPackage() throws SigarException, NetException {
@@ -69,7 +68,7 @@ public class AbstractPackageConstructor implements IPackageConstructor {
      * @return {@link JvmPackage}
      * @throws NetException   获取网络信息异常
      * @throws SigarException Sigar异常
-     *
+
      */
     @Override
     public JvmPackage structureJvmPackage() throws NetException, SigarException {
@@ -83,7 +82,7 @@ public class AbstractPackageConstructor implements IPackageConstructor {
      *
      * @param result 返回结果
      * @return {@link BaseResponsePackage}
-     *
+
      */
     @Override
     public BaseResponsePackage structureBaseResponsePackage(Result result) {
@@ -98,7 +97,7 @@ public class AbstractPackageConstructor implements IPackageConstructor {
      * @return {@link BaseRequestPackage}
      * @throws NetException   自定义获取网络信息异常
      * @throws SigarException Sigar异常
-     *
+
      */
     @Override
     public BaseRequestPackage structureBaseRequestPackage() throws NetException, SigarException {

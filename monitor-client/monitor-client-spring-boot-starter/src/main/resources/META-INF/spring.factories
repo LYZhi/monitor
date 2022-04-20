@@ -1,0 +1,2 @@
+com.lyzhi.monitor.client.springboot.starter.annotation.EnableMonitoring=\
+  com.lyzhi.monitor.client.springboot.starter.autoconfigure.MonitoringPlugAutoConfiguration

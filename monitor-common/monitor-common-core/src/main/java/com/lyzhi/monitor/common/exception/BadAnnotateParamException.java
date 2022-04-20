@@ -1,7 +1,10 @@
 package com.lyzhi.monitor.common.exception;
 
 /**
+ * <p>
  * 错误的注解参数异常
+ * </p>
+ *
  */
 public class BadAnnotateParamException extends MonitoringUniversalException {
 

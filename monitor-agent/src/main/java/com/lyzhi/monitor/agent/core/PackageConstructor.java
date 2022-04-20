@@ -1,8 +1,6 @@
 package com.lyzhi.monitor.agent.core;
 
 import cn.hutool.core.util.IdUtil;
-import com.lyzhi.monitor.client.core.core.ConfigLoader;
-import com.lyzhi.monitor.client.core.util.InstanceUtils;
 import com.lyzhi.monitor.common.abs.AbstractPackageConstructor;
 import com.lyzhi.monitor.common.constant.EndpointTypeEnums;
 import com.lyzhi.monitor.common.constant.LanguageTypeConstants;
@@ -11,6 +9,8 @@ import com.lyzhi.monitor.common.dto.BaseResponsePackage;
 import com.lyzhi.monitor.common.util.AppServerDetectorUtils;
 import com.lyzhi.monitor.common.util.server.NetUtils;
 import com.lyzhi.monitor.common.util.server.OsUtils;
+import com.lyzhi.monitor.client.core.core.ConfigLoader;
+import com.lyzhi.monitor.client.core.util.InstanceUtils;
 import lombok.SneakyThrows;
 
 import java.util.Date;

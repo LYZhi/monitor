@@ -6,7 +6,10 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 
 /**
+ * <p>
  * 服务器信息属性
+ * </p>
+ *
  */
 @Data
 @ToString

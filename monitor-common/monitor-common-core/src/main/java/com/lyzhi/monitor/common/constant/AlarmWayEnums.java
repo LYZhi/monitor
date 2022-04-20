@@ -30,7 +30,7 @@ public enum AlarmWayEnums {
      *
      * @param alarmWayStr 告警方式字符
      * @return 告警方式枚举
-     *
+
      */
     public static AlarmWayEnums str2Enum(String alarmWayStr) {
         // 短信
@@ -51,7 +51,7 @@ public enum AlarmWayEnums {
      *
      * @param alarmWayStrs 告警方式字符串数组
      * @return 告警方式枚举数组
-     *
+
      */
     public static AlarmWayEnums[] strs2Enums(String... alarmWayStrs) {
         List<AlarmWayEnums> alarmWayEnumsList = Lists.newArrayList();
@@ -72,7 +72,7 @@ public enum AlarmWayEnums {
      *
      * @param alarmWayEnums 告警方式枚举数组
      * @return 告警方式字符串数组
-     *
+
      */
     public static String[] enums2Strs(AlarmWayEnums... alarmWayEnums) {
         List<String> alarmStrList = Lists.newArrayList();

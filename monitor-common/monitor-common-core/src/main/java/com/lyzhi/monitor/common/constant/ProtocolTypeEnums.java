@@ -22,7 +22,7 @@ public enum ProtocolTypeEnums {
      *
      * @param protocolTypeStr 协议类型字符串
      * @return 协议类型枚举
-     *
+
      */
     public static ProtocolTypeEnums str2Enum(String protocolTypeStr) {
         // HTTP协议

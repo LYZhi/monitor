@@ -5,7 +5,10 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 /**
+ * <p>
  * 监控告警信息包
+ * </p>
+ *
  */
 @Data
 @ToString

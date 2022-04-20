@@ -1,7 +1,9 @@
 package com.lyzhi.monitor.common.exception;
 
 /**
+ * <p>
  * 找不到配置参数异常
+ * </p>
  *
  */
 public class NotFoundConfigParamException extends MonitoringUniversalException {

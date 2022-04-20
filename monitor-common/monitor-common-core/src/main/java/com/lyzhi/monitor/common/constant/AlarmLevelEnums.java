@@ -3,7 +3,10 @@ package com.lyzhi.monitor.common.constant;
 import org.apache.commons.lang3.StringUtils;
 
 /**
+ * <p>
  * 告警级别
+ * </p>
+ *
  */
 public enum AlarmLevelEnums {
 
@@ -35,7 +38,7 @@ public enum AlarmLevelEnums {
      * @param configAlarmLevel 配置的告警级别
      * @param alarmLevel       当前的告警级别
      * @return boolean
-     *
+
      */
     public static boolean isAlarm(AlarmLevelEnums configAlarmLevel, AlarmLevelEnums alarmLevel) {
         // INFO
@@ -71,7 +74,7 @@ public enum AlarmLevelEnums {
      *
      * @param alarmLevelStr 告警级别字符串
      * @return 告警级别枚举
-     *
+
      */
     public static AlarmLevelEnums str2Enum(String alarmLevelStr) {
         // 消息

@@ -16,6 +16,7 @@ public class MapUtils {
      * 私有化构造方法
      * </p>
      *
+
      */
     private MapUtils() {
     }
@@ -27,7 +28,7 @@ public class MapUtils {
      *
      * @param paramMap 请求参数
      * @return {@link Map}
-     *
+
      */
     public static Map<String, String> convertParamMap(Map<String, String[]> paramMap) {
         Map<String, String> rtnMap = new HashMap<>(16);

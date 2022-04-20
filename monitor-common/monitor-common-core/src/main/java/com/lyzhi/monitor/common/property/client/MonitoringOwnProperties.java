@@ -6,7 +6,10 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 
 /**
+ * <p>
  * 与自己相关的监控属性
+ * </p>
+ *
  */
 @Data
 @ToString

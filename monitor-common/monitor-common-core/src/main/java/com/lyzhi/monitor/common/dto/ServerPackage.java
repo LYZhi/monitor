@@ -5,7 +5,9 @@ import lombok.*;
 import lombok.experimental.Accessors;
 
 /**
- *  服务器信息包
+ * <p>
+ * 服务器信息包
+ * </p>
  *
  */
 @Data

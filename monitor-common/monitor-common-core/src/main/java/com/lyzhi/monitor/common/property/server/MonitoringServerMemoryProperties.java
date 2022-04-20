@@ -8,6 +8,7 @@ import lombok.*;
  * <p>
  * 服务器内存配置属性
  * </p>
+ *
  */
 @Data
 @ToString

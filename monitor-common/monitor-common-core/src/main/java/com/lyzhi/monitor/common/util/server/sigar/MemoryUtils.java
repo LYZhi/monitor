@@ -1,6 +1,5 @@
 package com.lyzhi.monitor.common.util.server.sigar;
 
-
 import com.lyzhi.monitor.common.domain.server.MemoryDomain;
 import com.lyzhi.monitor.common.init.InitSigar;
 import org.hyperic.sigar.Mem;
@@ -22,7 +21,7 @@ public class MemoryUtils extends InitSigar {
      *
      * @return {@link MemoryDomain}
      * @throws SigarException Sigar异常
-     *
+
      */
     public static MemoryDomain getMemoryInfo() throws SigarException {
         Mem mem = SIGAR.getMem();

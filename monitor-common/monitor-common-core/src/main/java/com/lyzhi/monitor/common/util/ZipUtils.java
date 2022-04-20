@@ -9,7 +9,6 @@ import org.apache.commons.lang3.StringUtils;
  * 压缩工具类
  * </p>
  *
- *
  */
 @Slf4j
 public class ZipUtils {
@@ -19,6 +18,7 @@ public class ZipUtils {
      * 私有化构造方法
      * </p>
      *
+
      */
     private ZipUtils() {
     }
@@ -30,7 +30,7 @@ public class ZipUtils {
      *
      * @param str 输入字符串
      * @return boolean 否需要进行gzip压缩
-     *
+
      */
     public static boolean isNeedGzip(String str) {
         if (StringUtils.isBlank(str)) {

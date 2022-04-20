@@ -1,6 +1,5 @@
 package com.lyzhi.monitor.common.dto;
 
-
 import com.lyzhi.monitor.common.abs.AbstractInstanceBean;
 import com.lyzhi.monitor.common.domain.Result;
 import lombok.*;

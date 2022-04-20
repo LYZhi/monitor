@@ -1,9 +1,8 @@
 package com.lyzhi.monitor.common.util.server.sigar;
 
-
-import com.google.common.collect.Lists;
 import com.lyzhi.monitor.common.domain.server.NetDomain;
 import com.lyzhi.monitor.common.init.InitSigar;
+import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.hyperic.sigar.NetFlags;
 import org.hyperic.sigar.NetInterfaceConfig;
@@ -28,7 +27,7 @@ public class NetInterfaceUtils extends InitSigar {
      *
      * @return {@link NetDomain}
      * @throws SigarException Sigar异常
-     *
+
      */
     public static NetDomain getNetInfo() throws SigarException {
         NetDomain netDomain = new NetDomain();

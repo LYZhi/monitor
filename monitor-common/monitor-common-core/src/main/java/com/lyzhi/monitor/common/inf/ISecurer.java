@@ -18,7 +18,7 @@ public interface ISecurer {
      * @param str     需要加密的字符串
      * @param charset 字符集
      * @return 加密后的字符串
-     *
+
      */
     String encrypt(String str, Charset charset);
 
@@ -29,7 +29,7 @@ public interface ISecurer {
      *
      * @param arry 需要加密的字节数组
      * @return 加密后的字符串
-     *
+
      */
     String encrypt(byte[] arry);
 
@@ -41,7 +41,7 @@ public interface ISecurer {
      * @param str     需要解密的字符串
      * @param charset 字符集
      * @return 解密后的字符串
-     *
+
      */
     String decrypt(String str, Charset charset);
 
@@ -52,7 +52,7 @@ public interface ISecurer {
      *
      * @param str 需要解密的字符串
      * @return 解密后的字节数组
-     *
+
      */
     byte[] decrypt(String str);
 

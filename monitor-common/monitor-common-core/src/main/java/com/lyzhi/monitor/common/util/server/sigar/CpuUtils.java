@@ -1,9 +1,8 @@
 package com.lyzhi.monitor.common.util.server.sigar;
 
-
-import com.google.common.collect.Lists;
 import com.lyzhi.monitor.common.domain.server.CpuDomain;
 import com.lyzhi.monitor.common.init.InitSigar;
+import com.google.common.collect.Lists;
 import org.hyperic.sigar.CpuInfo;
 import org.hyperic.sigar.CpuPerc;
 import org.hyperic.sigar.SigarException;
@@ -25,7 +24,7 @@ public class CpuUtils extends InitSigar {
      *
      * @return {@link CpuDomain}
      * @throws SigarException Sigar异常
-     *
+
      */
     public static CpuDomain getCpuInfo() throws SigarException {
         CpuDomain cpuDomain = new CpuDomain();

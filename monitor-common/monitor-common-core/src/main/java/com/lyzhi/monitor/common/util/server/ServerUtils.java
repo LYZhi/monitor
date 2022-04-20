@@ -1,6 +1,5 @@
 package com.lyzhi.monitor.common.util.server;
 
-
 import com.lyzhi.monitor.common.domain.Server;
 import com.lyzhi.monitor.common.util.server.oshi.PowerSourceUtils;
 import com.lyzhi.monitor.common.util.server.oshi.ProcessUtils;
@@ -24,6 +23,7 @@ public final class ServerUtils {
      * 屏蔽共有构造方法
      * </p>
      *
+     * @author 皮锋
      */
     private ServerUtils() {
     }
@@ -35,7 +35,7 @@ public final class ServerUtils {
      *
      * @return {@link Server}
      * @throws SigarException Sigar异常
-     *
+
      */
     public static Server getServerInfo() throws SigarException {
         return Server.builder()

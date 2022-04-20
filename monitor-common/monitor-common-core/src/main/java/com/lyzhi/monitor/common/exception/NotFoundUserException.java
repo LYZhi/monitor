@@ -1,7 +1,9 @@
 package com.lyzhi.monitor.common.exception;
 
 /**
+ * <p>
  * 找不到用户异常
+ * </p>
  *
  */
 public class NotFoundUserException extends MonitoringUniversalException {

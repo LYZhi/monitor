@@ -8,13 +8,20 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * <p>
  * 公共的线程关闭钩子。
+ * </p>
+ *
  */
 @Slf4j
 public class ThreadShutdownHook {
 
     /**
+     * <p>
      * 执行关闭钩子，优雅关闭线程池
+     * </p>
+     *
+
      */
     public void executeShutdownHook() {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
@@ -34,10 +41,13 @@ public class ThreadShutdownHook {
     }
 
     /**
+     * <p>
      * 优雅的关闭线程池
+     * </p>
      *
      * @param executorService {@link ExecutorService}
      * @param alias           线程池别名
+
      */
     public void shutdownGracefully(ExecutorService executorService, String alias) {
         try {

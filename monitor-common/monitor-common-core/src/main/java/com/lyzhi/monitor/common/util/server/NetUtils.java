@@ -1,17 +1,20 @@
 package com.lyzhi.monitor.common.util.server;
 
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.date.TimeInterval;
 import cn.hutool.core.net.NetUtil;
 import com.google.common.collect.Maps;
-import com.lyzhi.monitor.common.constant.TcpIpEnums;
 import com.lyzhi.monitor.common.domain.server.NetDomain;
 import com.lyzhi.monitor.common.exception.NetException;
 import com.lyzhi.monitor.common.util.server.sigar.NetInterfaceUtils;
 import lombok.Cleanup;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.net.telnet.TelnetClient;
 import org.hyperic.sigar.SigarException;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
 import java.nio.charset.Charset;
@@ -33,6 +36,7 @@ public class NetUtils {
      * 私有化构造方法
      * </p>
      *
+
      */
     private NetUtils() {
     }
@@ -45,7 +49,7 @@ public class NetUtils {
      * @return MAC地址
      * @throws NetException   获取网络信息异常：获取本机MAC地址异常！
      * @throws SigarException Sigar异常
-     *
+
      */
     public static String getLocalMac() throws NetException, SigarException {
         try {
@@ -64,7 +68,7 @@ public class NetUtils {
      *
      * @return MAC地址
      * @throws NetException 获取网络信息异常：获取本机MAC地址异常！
-     *
+
      */
     private static String getLocalMacByInetAddress() throws NetException {
         try {
@@ -100,7 +104,8 @@ public class NetUtils {
      * @return MAC地址
      * @throws NetException   获取网络信息异常：获取本机MAC地址异常！
      * @throws SigarException Sigar异常
-     *
+
+     * @since v0.0.2
      */
     private static String getLocalMacBySigar() throws SigarException, NetException {
         // 获取本机IP地址
@@ -130,7 +135,7 @@ public class NetUtils {
      *
      * @return IP地址
      * @throws NetException 获取网络信息异常：获取本机IP地址异常！
-     *
+
      */
     public static String getLocalIp() throws NetException {
         try {
@@ -154,7 +159,7 @@ public class NetUtils {
      *
      * @return IP地址
      * @throws UnknownHostException 无法确定主机的IP地址异常
-     *
+
      */
     private static String getWindowsLocalIp() throws UnknownHostException {
         InetAddress ip4 = InetAddress.getLocalHost();
@@ -168,7 +173,7 @@ public class NetUtils {
      *
      * @return IP地址
      * @throws SocketException 创建或访问套接字时异常
-     *
+
      */
     private static String getLinuxLocalIp() throws SocketException {
         String ip = null;
@@ -200,7 +205,7 @@ public class NetUtils {
      * @return 返回Map，key解释：<br>
      * 1.isConnect：是否能ping通；<br>
      * 2.avgTime：平均时间（毫秒）<br>
-     *
+
      */
     public static Map<String, Object> isConnect(String ip) {
         // 返回值
@@ -221,7 +226,7 @@ public class NetUtils {
      * @return 返回Map，key解释：<br>
      * 1.isConnect：是否能ping通；<br>
      * 2.avgTime：平均时间（毫秒）<br>
-     *
+
      */
     private static Map<String, Object> ping(String ip) {
         // 是否能ping通
@@ -269,7 +274,7 @@ public class NetUtils {
         // 返回值
         Map<String, Object> result = Maps.newHashMap();
         result.put("isConnect", isConnect);
-        result.put("avgTime", avgTime);
+        result.put("avgTime", StringUtils.equals(avgTime, "未知") ? "3000" : avgTime);
         return result;
     }
 
@@ -280,7 +285,7 @@ public class NetUtils {
      *
      * @param line ping返回的数据
      * @return 0或者1
-     *
+
      */
     private static int getCheckResult(String line) {
         // 若line含有=18ms TTL=16字样，说明已经ping通，返回1，否则返回0
@@ -304,7 +309,7 @@ public class NetUtils {
      *
      * @param pingResultStr ping命令返回字符串
      * @return ping平均时间（毫秒）
-     *
+
      */
     private static String getPingAvgTime(String pingResultStr) {
         // 字符串为空
@@ -338,28 +343,66 @@ public class NetUtils {
      * 检测telnet状态
      * </p>
      *
-     * @param hostname   主机名
-     * @param port       端口号
-     * @param tcpIpEnums TCP/IP协议簇枚举
+     * @param hostname 主机名
+     * @param port     端口号
      * @return boolean 返回是否telnet通
-     *
+
      */
-    public static boolean telnet(String hostname, int port, TcpIpEnums tcpIpEnums) {
-        boolean isConnected = false;
+    @Deprecated
+    public static boolean telnet(String hostname, int port) {
+        boolean isConnected;
         try {
-            // TCP协议
-            if (tcpIpEnums == TcpIpEnums.TCP) {
-                @Cleanup
-                Socket socket = new Socket();
-                // 建立连接
-                socket.connect(new InetSocketAddress(hostname, port), 3000);
-                // 查看连通状态
-                isConnected = socket.isConnected();
-            }
+            @Cleanup
+            Socket socket = new Socket();
+            // 建立连接
+            socket.connect(new InetSocketAddress(hostname, port), 3000);
+            // 查看连通状态
+            isConnected = socket.isConnected();
         } catch (Exception e) {
             isConnected = false;
         }
         return isConnected;
+    }
+
+    /**
+     * <p>
+     * 检测telnet状态
+     * </p>
+     *
+     * @param hostname 主机名
+     * @param port     端口号
+     * @return 返回Map，key解释：<br>
+     * 1.isConnect：是否能telnet通；<br>
+     * 2.avgTime：平均时间（毫秒）<br>
+
+     */
+    public static Map<String, Object> telnetVT200(String hostname, int port) {
+        // 连通状态
+        boolean isConnect;
+        // 计时器
+        TimeInterval timer = DateUtil.timer();
+        try {
+            // 指明Telnet终端类型，否则会返回来的数据中文会乱码
+            @Cleanup("disconnect")
+            TelnetClient telnetClient = new TelnetClient("vt200");
+            telnetClient.setConnectTimeout(3000);
+            telnetClient.connect(hostname, port);
+            // 查看连通状态
+            isConnect = telnetClient.isConnected();
+        } catch (ConnectException connectException) {
+            log.debug("对端拒绝连接，服务未启动端口监听或防火墙：{}", connectException.getMessage());
+            isConnect = false;
+        } catch (IOException ioException) {
+            log.debug("对端连接失败：{}", ioException.getMessage());
+            isConnect = false;
+        }
+        // 时间差（毫秒）
+        long avgTime = timer.interval();
+        // 返回值
+        Map<String, Object> result = Maps.newHashMap();
+        result.put("isConnect", isConnect);
+        result.put("avgTime", avgTime);
+        return result;
     }
 
 }

@@ -1,13 +1,7 @@
 package com.lyzhi.monitor.client.core;
 
 import com.alibaba.fastjson.JSON;
-import com.lyzhi.monitor.client.core.constant.UrlConstants;
-import com.lyzhi.monitor.client.core.core.ConfigLoader;
-import com.lyzhi.monitor.client.core.core.PackageConstructor;
-import com.lyzhi.monitor.client.core.core.Sender;
-import com.lyzhi.monitor.client.core.scheduler.HeartbeatTaskScheduler;
-import com.lyzhi.monitor.client.core.scheduler.JvmTaskScheduler;
-import com.lyzhi.monitor.client.core.scheduler.ServerTaskScheduler;
+import com.lyzhi.monitor.common.constant.ThreadTypeEnums;
 import com.lyzhi.monitor.common.domain.Alarm;
 import com.lyzhi.monitor.common.domain.Result;
 import com.lyzhi.monitor.common.dto.AlarmPackage;
@@ -18,15 +12,29 @@ import com.lyzhi.monitor.common.exception.NotFoundConfigFileException;
 import com.lyzhi.monitor.common.exception.NotFoundConfigParamException;
 import com.lyzhi.monitor.common.init.InitBanner;
 import com.lyzhi.monitor.common.property.client.MonitoringProperties;
+import com.lyzhi.monitor.client.core.constant.UrlConstants;
+import com.lyzhi.monitor.client.core.core.ConfigLoader;
+import com.lyzhi.monitor.client.core.core.PackageConstructor;
+import com.lyzhi.monitor.client.core.core.Sender;
+import com.lyzhi.monitor.client.core.scheduler.BusinessBuryingPointScheduler;
+import com.lyzhi.monitor.client.core.scheduler.HeartbeatTaskScheduler;
+import com.lyzhi.monitor.client.core.scheduler.JvmTaskScheduler;
+import com.lyzhi.monitor.client.core.scheduler.ServerTaskScheduler;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.hyperic.sigar.SigarException;
 
 import java.io.IOException;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /**
+ * <p>
  * 监控客户端入口类
+ * </p>
+ *
+ * @author 皮锋
+ * @custom.date 2020年3月5日 下午3:00:25
  */
 @Slf4j
 public class Monitor {
@@ -35,6 +43,9 @@ public class Monitor {
      * <p>
      * 私有化构造方法
      * </p>
+     *
+     * @author 皮锋
+     * @custom.date 2020/9/16 14:17
      */
     private Monitor() {
     }
@@ -45,6 +56,8 @@ public class Monitor {
      * </p>
      *
      * @return {@link MonitoringProperties}
+     * @author 皮锋
+     * @custom.date 2020年3月5日 下午3:01:38
      */
     @SneakyThrows
     public static MonitoringProperties start() {
@@ -59,6 +72,8 @@ public class Monitor {
      * @param configPath 配置文件路径
      * @param configName 配置文件名字
      * @return {@link MonitoringProperties}
+     * @author 皮锋
+     * @custom.date 2020年3月5日 下午4:06:31
      */
     @SneakyThrows
     public static MonitoringProperties start(final String configPath, final String configName) {
@@ -76,6 +91,8 @@ public class Monitor {
      * @throws NotFoundConfigFileException  找不到配置文件异常
      * @throws ErrorConfigParamException    错误的配置参数异常
      * @throws NotFoundConfigParamException 找不到配置参数异常
+     * @author 皮锋
+     * @custom.date 2020年3月5日 下午4:07:10
      */
     private static MonitoringProperties run(final String configPath, final String configName)
             throws NotFoundConfigFileException, ErrorConfigParamException, NotFoundConfigParamException {
@@ -100,6 +117,8 @@ public class Monitor {
      *
      * @param alarm 告警信息
      * @return {@link Result}
+     * @author 皮锋
+     * @custom.date 2020年3月6日 上午10:17:44
      */
     public static Result sendAlarm(Alarm alarm) {
         try {
@@ -125,10 +144,11 @@ public class Monitor {
      * @param unit           时间单位
      * @param threadTypeEnum 线程类型：CPU密集型、IO密集型
      * @return {@link ScheduledExecutorService}
-     *
+     * @author 皮锋
+     * @custom.date 2020/8/24 20:33
      */
-//    public static ScheduledExecutorService buryingPoint(Runnable command, long initialDelay, long period, TimeUnit unit, ThreadTypeEnums threadTypeEnum) {
-//        return BusinessBuryingPointScheduler.run(command, initialDelay, period, unit, threadTypeEnum);
-//    }
+        public static ScheduledExecutorService buryingPoint(Runnable command, long initialDelay, long period, TimeUnit unit, ThreadTypeEnums threadTypeEnum) {
+        return BusinessBuryingPointScheduler.run(command, initialDelay, period, unit, threadTypeEnum);
+    }
 
 }

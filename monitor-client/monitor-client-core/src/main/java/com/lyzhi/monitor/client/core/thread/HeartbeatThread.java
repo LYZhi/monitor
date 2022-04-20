@@ -2,11 +2,11 @@ package com.lyzhi.monitor.client.core.thread;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.date.TimeInterval;
+import com.lyzhi.monitor.common.dto.HeartbeatPackage;
+import com.lyzhi.monitor.common.exception.NetException;
 import com.lyzhi.monitor.client.core.constant.UrlConstants;
 import com.lyzhi.monitor.client.core.core.PackageConstructor;
 import com.lyzhi.monitor.client.core.core.Sender;
-import com.lyzhi.monitor.common.dto.HeartbeatPackage;
-import com.lyzhi.monitor.common.exception.NetException;
 import lombok.extern.slf4j.Slf4j;
 import org.hyperic.sigar.SigarException;
 
@@ -16,6 +16,9 @@ import java.io.IOException;
  * <p>
  * 心跳线程
  * </p>
+ *
+ * @author 皮锋
+ * @custom.date 2020年3月5日 下午2:50:46
  */
 @Slf4j
 public class HeartbeatThread implements Runnable {
@@ -24,6 +27,9 @@ public class HeartbeatThread implements Runnable {
      * <p>
      * 构建+发送心跳包
      * </p>
+     *
+     * @author 皮锋
+     * @custom.date 2020/4/9 17:32
      */
     @Override
     public void run() {

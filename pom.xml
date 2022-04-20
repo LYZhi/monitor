@@ -31,7 +31,7 @@
         <!-- 项目根目录 -->
         <myproject.root>${basedir}</myproject.root>
         <!-- 根项目名称 -->
-        <myproject.name>phoenix</myproject.name>
+        <myproject.name>monitor</myproject.name>
         <!-- spring-boot-starter-parent版本 -->
         <spring-boot-starter-parent.version>2.3.0.RELEASE</spring-boot-starter-parent.version>
         <!-- 解决eclipse中maven报错的问题 -->
@@ -56,6 +56,7 @@
         <!-- commons工具包版本 -->
         <commons-io.version>2.6</commons-io.version>
         <commons-collections.version>3.2.2</commons-collections.version>
+        <commons-net.version>3.8.0</commons-net.version>
         <!--<commons-logging.version>1.2</commons-logging.version>-->
         <!-- sigar版本 -->
         <sigar.version>1.6.4</sigar.version>
@@ -73,13 +74,8 @@
         <cglib.version>3.3.0</cglib.version>
         <!-- servlet-api版本 -->
         <servlet-api.version>2.5</servlet-api.version>
-        <!--swagger版本 -->
-        <swagger.version>2.9.2</swagger.version>
-        <swagger-ui.version>2.9.2</swagger-ui.version>
-        <swagger-annotations.version>1.5.21</swagger-annotations.version>
-        <swagger-models.version>1.5.21</swagger-models.version>
-        <swagger-ui-layer.version>1.1.3</swagger-ui-layer.version>
-        <swagger-bootstrap-ui.version>1.9.6</swagger-bootstrap-ui.version>
+        <!-- knife4j文档依赖 -->
+        <knife4j.version>3.0.3</knife4j.version>
         <!-- mybatis-plus-boot-starter版本 -->
         <mybatis-plus-boot-starter.version>3.1.2</mybatis-plus-boot-starter.version>
         <!-- mybatis-plus代码生成器版本 -->
@@ -228,6 +224,12 @@
                 <version>${commons-collections.version}</version>
             </dependency>
             <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>${commons-net.version}</version>
+            </dependency>
+            <!-- sigar依赖 -->
+            <dependency>
                 <groupId>org.fusesource</groupId>
                 <artifactId>sigar</artifactId>
                 <version>${sigar.version}</version>
@@ -275,70 +277,12 @@
                 <version>${servlet-api.version}</version>
                 <scope>provided</scope>
             </dependency>
-            <!-- swagger依赖 -->
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <exclusions>
-                    <exclusion>
-                        <groupId>io.swagger</groupId>
-                        <artifactId>swagger-annotations</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>io.swagger</groupId>
-                        <artifactId>swagger-models</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>slf4j-api</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>spring-aop</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>spring-beans</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>spring-context</artifactId>
-                    </exclusion>
-                </exclusions>
-                <version>${swagger.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-annotations</artifactId>
-                <version>${swagger-annotations.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-models</artifactId>
-                <version>${swagger-models.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.slf4j</groupId>
-                        <artifactId>slf4j-api</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger-ui.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.caspar-chen</groupId>
-                <artifactId>swagger-ui-layer</artifactId>
-                <version>${swagger-ui-layer.version}</version>
-            </dependency>
+            <!-- knife4j文档依赖 -->
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
-                <artifactId>swagger-bootstrap-ui</artifactId>
-                <version>${swagger-bootstrap-ui.version}</version>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
             </dependency>
-
             <!-- mybatis-plus依赖 -->
             <dependency>
                 <groupId>com.baomidou</groupId>

@@ -1,7 +1,9 @@
 package com.lyzhi.monitor.common.exception;
 
 /**
+ * <p>
  * 找不到主机异常
+ * </p>
  *
  */
 public class NotFoundHostException extends MonitoringUniversalException {

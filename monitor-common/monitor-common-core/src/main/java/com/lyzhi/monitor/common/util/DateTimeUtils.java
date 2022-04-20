@@ -1,6 +1,5 @@
 package com.lyzhi.monitor.common.util;
 
-
 import com.lyzhi.monitor.common.constant.DateTimeStylesEnums;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +28,7 @@ public class DateTimeUtils {
      *
      * @param date {@link Date}
      * @return 日期时间字符串
-     *
+
      */
     public static String dateToString(Date date) {
         return dateToString(date, DateTimeStylesEnums.YYYY_MM_DD_HH_MM_SS);
@@ -43,7 +42,7 @@ public class DateTimeUtils {
      * @param date                {@link Date}
      * @param dateTimeStylesEnums 日期时间样式-{@link DateTimeStylesEnums}
      * @return 日期时间字符串
-     *
+
      */
     public static String dateToString(Date date, DateTimeStylesEnums dateTimeStylesEnums) {
         return dateToString(date, dateTimeStylesEnums.getValue());
@@ -57,7 +56,7 @@ public class DateTimeUtils {
      * @param date     {@link Date}
      * @param parttern 日期时间字符串格式
      * @return 日期时间字符串
-     *
+
      */
     public static String dateToString(Date date, String parttern) {
         LocalDateTime localDateTime = date2LocalDateTime(date);
@@ -71,7 +70,7 @@ public class DateTimeUtils {
      *
      * @param localDate {@link LocalDate}
      * @return 日期字符串
-     *
+
      */
     public static String localDateToString(LocalDate localDate) {
         return localDateToString(localDate, DateTimeStylesEnums.YYYY_MM_DD);
@@ -85,7 +84,7 @@ public class DateTimeUtils {
      * @param localDate       {@link LocalDate}
      * @param dateStylesEnums 日期样式-{@link DateTimeStylesEnums}
      * @return 日期字符串
-     *
+
      */
     public static String localDateToString(LocalDate localDate, DateTimeStylesEnums dateStylesEnums) {
         return localDateToString(localDate, dateStylesEnums.getValue());
@@ -99,7 +98,7 @@ public class DateTimeUtils {
      * @param localDate {@link LocalDate}
      * @param parttern  日期字符串格式
      * @return 日期字符串
-     *
+
      */
     public static String localDateToString(LocalDate localDate, String parttern) {
         DateTimeFormatter fmt = DateTimeFormatter.ofPattern(parttern);
@@ -113,7 +112,7 @@ public class DateTimeUtils {
      *
      * @param date {@link Date}
      * @return {@link LocalDateTime}
-     *
+
      */
     public static LocalDateTime date2LocalDateTime(Date date) {
         Instant instant = date.toInstant();
@@ -128,7 +127,7 @@ public class DateTimeUtils {
      *
      * @param localDateTime {@link LocalDateTime}
      * @return {@link Date}
-     *
+
      */
     public static Date localDateTime2Data(LocalDateTime localDateTime) {
         ZoneId zoneId = ZoneId.systemDefault();
@@ -143,7 +142,7 @@ public class DateTimeUtils {
      *
      * @param datetimeStr 日期字符串
      * @return {@link Date}
-     *
+
      */
     public static Date string2Date(String datetimeStr) {
         return string2Date(datetimeStr, DateTimeStylesEnums.YYYY_MM_DD_HH_MM_SS);
@@ -157,7 +156,7 @@ public class DateTimeUtils {
      * @param datetimeStr     日期字符串
      * @param dateStylesEnums 日期时间样式-{@link DateTimeStylesEnums}
      * @return {@link Date}
-     *
+
      */
     public static Date string2Date(String datetimeStr, DateTimeStylesEnums dateStylesEnums) {
         return string2Date(datetimeStr, dateStylesEnums.getValue());
@@ -171,7 +170,7 @@ public class DateTimeUtils {
      * @param datetimeStr 日期字符串
      * @param parttern    日期时间字符串格式
      * @return {@link Date}
-     *
+
      */
     @SneakyThrows
     public static Date string2Date(String datetimeStr, String parttern) {
@@ -185,7 +184,7 @@ public class DateTimeUtils {
      *
      * @param timeStr 时间字符串："HH:mm:ss"
      * @return 指定时间对应的毫秒数
-     *
+
      */
     public static long getTimeMillis(String timeStr) {
         // 年月日

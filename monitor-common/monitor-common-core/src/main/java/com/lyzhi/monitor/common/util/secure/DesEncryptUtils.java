@@ -22,7 +22,7 @@ public class DesEncryptUtils extends InitSecure {
      * @param str     需要加密的字符串
      * @param charset 字符集
      * @return 加密后的字符串
-     *
+
      */
     public static String encrypt(String str, Charset charset) {
         byte[] key = Base64.getDecoder().decode(SECRET_KEY_DES);
@@ -36,7 +36,7 @@ public class DesEncryptUtils extends InitSecure {
      *
      * @param arry 需要加密的字节数组
      * @return 加密后的字符串
-     *
+
      */
     public static String encrypt(byte[] arry) {
         byte[] key = Base64.getDecoder().decode(SECRET_KEY_DES);
@@ -51,7 +51,7 @@ public class DesEncryptUtils extends InitSecure {
      * @param str     需要解密的字符串
      * @param charset 字符集
      * @return 解密后的字符串
-     *
+
      */
     public static String decrypt(String str, Charset charset) {
         byte[] key = Base64.getDecoder().decode(SECRET_KEY_DES);
@@ -65,7 +65,7 @@ public class DesEncryptUtils extends InitSecure {
      *
      * @param str 需要解密的字符串
      * @return 解密后的字节数组
-     *
+
      */
     public static byte[] decrypt(String str) {
         byte[] key = Base64.getDecoder().decode(SECRET_KEY_DES);

@@ -1,8 +1,7 @@
 package com.lyzhi.monitor.common.util;
 
-
-import com.liferay.portal.kernel.util.ServerDetector;
 import com.lyzhi.monitor.common.constant.AppServerTypeEnums;
+import com.liferay.portal.kernel.util.ServerDetector;
 
 /**
  * <p>
@@ -17,6 +16,7 @@ public class AppServerDetectorUtils {
      * 构造方法私有化
      * </p>
      *
+
      */
     private AppServerDetectorUtils() {
     }
@@ -33,7 +33,7 @@ public class AppServerDetectorUtils {
      * </p>
      *
      * @return {@link AppServerTypeEnums}
-     *
+
      */
     public static AppServerTypeEnums getAppServerTypeEnum() {
         if (ServerDetector.isTomcat()) {
@@ -60,7 +60,7 @@ public class AppServerDetectorUtils {
      * </p>
      *
      * @return 是 或者 否
-     *
+
      */
     private static boolean isJetty() {
         Class<?> c = AppServerDetectorUtils.class;
@@ -73,7 +73,7 @@ public class AppServerDetectorUtils {
      * </p>
      *
      * @return 是 或者 否
-     *
+
      */
     private static boolean isUndertow() {
         Class<?> c = AppServerDetectorUtils.class;
@@ -86,7 +86,7 @@ public class AppServerDetectorUtils {
      * </p>
      *
      * @return 是 或者 否
-     *
+
      */
     private static boolean isNetty() {
         Class<?> c = AppServerDetectorUtils.class;

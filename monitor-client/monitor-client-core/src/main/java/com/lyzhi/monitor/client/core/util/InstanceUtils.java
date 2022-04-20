@@ -1,15 +1,18 @@
 package com.lyzhi.monitor.client.core.util;
 
-import com.lyzhi.monitor.client.core.core.ConfigLoader;
 import com.lyzhi.monitor.common.exception.NetException;
 import com.lyzhi.monitor.common.util.Md5Utils;
 import com.lyzhi.monitor.common.util.server.NetUtils;
+import com.lyzhi.monitor.client.core.core.ConfigLoader;
 import org.hyperic.sigar.SigarException;
 
 /**
  * <p>
  * 应用实例工具类
  * </p>
+ *
+ * @author 皮锋
+ * @custom.date 2020年3月4日 下午10:41:27
  */
 public class InstanceUtils {
 
@@ -27,6 +30,9 @@ public class InstanceUtils {
      * <p>
      * 私有化构造方法
      * </p>
+     *
+     * @author 皮锋
+     * @custom.date 2021/1/4 9:51
      */
     private InstanceUtils() {
     }
@@ -39,6 +45,8 @@ public class InstanceUtils {
      * @return 应用实例ID
      * @throws NetException   获取网络信息异常
      * @throws SigarException Sigar异常
+     * @author 皮锋
+     * @custom.date 2020年3月4日 下午11:12:46
      */
     public static String getInstanceId() throws NetException, SigarException {
         String instanceId = INSTANCE_ID_THREAD_LOCAL.get();
@@ -62,6 +70,9 @@ public class InstanceUtils {
      * <p>
      * 回收本地线程
      * </p>
+     *
+     * @author 皮锋
+     * @custom.date 2021/10/19 16:49
      */
     public static void remove() {
         INSTANCE_ID_THREAD_LOCAL.remove();

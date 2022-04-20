@@ -1,8 +1,8 @@
 package com.lyzhi.monitor.common.util.server.sigar;
 
-import com.google.common.collect.Lists;
 import com.lyzhi.monitor.common.domain.server.DiskDomain;
 import com.lyzhi.monitor.common.init.InitSigar;
+import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.hyperic.sigar.FileSystem;
 import org.hyperic.sigar.FileSystemUsage;
@@ -26,7 +26,7 @@ public class DiskUtils extends InitSigar {
      *
      * @return {@link DiskDomain}
      * @throws SigarException Sigar异常
-     *
+
      */
     public static DiskDomain getDiskInfo() throws SigarException {
         DiskDomain diskDomain = new DiskDomain();

@@ -1,7 +1,10 @@
 package com.lyzhi.monitor.common.constant;
 
 /**
+ * <p>
  * 监控类型
+ * </p>
+ *
  */
 public enum MonitorTypeEnums {
 
@@ -21,9 +24,9 @@ public enum MonitorTypeEnums {
     NET,
 
     /**
-     * TCP/IP服务
+     * TCP服务
      */
-    TCPIP4SERVICE,
+    TCP4SERVICE,
 
     /**
      * HTTP服务

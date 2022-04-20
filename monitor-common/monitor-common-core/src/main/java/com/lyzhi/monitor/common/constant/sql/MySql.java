@@ -8,7 +8,13 @@ package com.lyzhi.monitor.common.constant.sql;
  */
 public final class MySql {
 
+    /**
+     * <p>
+     * 私有化构造方法
+     * </p>
+     *
 
+     */
     private MySql() {
     }
 

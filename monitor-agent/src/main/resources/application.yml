@@ -23,7 +23,7 @@ logging:
   config: classpath:logback-spring.xml
   #????????????info
   level:
-    com.gitee.pifeng.monitoring: info
+    com.lyzhi.monitor: info
     oshi: error
 
 

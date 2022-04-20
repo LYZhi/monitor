@@ -13,6 +13,7 @@ public final class ResultMsgConstants {
      * 私有化构造方法
      * </p>
      *
+
      */
     private ResultMsgConstants() {
     }

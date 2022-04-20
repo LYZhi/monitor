@@ -10,7 +10,10 @@ import lombok.experimental.Accessors;
 import java.nio.charset.Charset;
 
 /**
+ * <p>
  * 告警信息
+ * </p>
+ *
  */
 @Data
 @Builder

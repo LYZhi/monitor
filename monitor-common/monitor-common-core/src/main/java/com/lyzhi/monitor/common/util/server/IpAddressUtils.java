@@ -6,21 +6,31 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
+ * <p>
  * IP地址工具类
+ * </p>
+ *
  */
 public class IpAddressUtils {
 
     /**
+     * <p>
      * 私有化构造方法
+     * </p>
+     *
+
      */
     private IpAddressUtils() {
     }
 
     /**
+     * <p>
      * 判断字符串是否为IP地址
+     * </p>
      *
      * @param str 字符串
      * @return 是否为IP地址
+
      */
     public static boolean isIpAddress(String str) {
         if (StringUtils.isBlank(str) || str.length() < 7 || str.length() > 15) {

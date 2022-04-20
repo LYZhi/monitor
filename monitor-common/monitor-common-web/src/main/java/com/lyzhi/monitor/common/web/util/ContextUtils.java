@@ -12,6 +12,8 @@ import java.util.Objects;
  * 上下文环境工具类
  * </p>
  *
+ * @author 皮锋
+ * @custom.date 2020/3/12 20:30
  */
 public class ContextUtils {
 
@@ -20,7 +22,8 @@ public class ContextUtils {
      * 私有化构造方法
      * </p>
      *
-     *
+     * @author 皮锋
+     * @custom.date 2020/9/9 8:43
      */
     private ContextUtils() {
     }
@@ -31,7 +34,8 @@ public class ContextUtils {
      * </p>
      *
      * @return {@link ServletRequestAttributes}
-     *
+     * @author 皮锋
+     * @custom.date 2021/5/18 22:31
      */
     public static ServletRequestAttributes getServletRequestAttributes() {
         return (ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder.getRequestAttributes());
@@ -43,7 +47,8 @@ public class ContextUtils {
      * </p>
      *
      * @return {@link HttpServletRequest}
-     *
+     * @author 皮锋
+     * @custom.date 2020/3/12 20:31
      */
     public static HttpServletRequest getRequest() {
         return getServletRequestAttributes().getRequest();
@@ -55,7 +60,8 @@ public class ContextUtils {
      * </p>
      *
      * @return {@link HttpSession}
-     *
+     * @author 皮锋
+     * @custom.date 2020/3/12 20:31
      */
     public static HttpSession getSession() {
         return getRequest().getSession();

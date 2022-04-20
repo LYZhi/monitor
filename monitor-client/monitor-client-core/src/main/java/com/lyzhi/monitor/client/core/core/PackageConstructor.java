@@ -1,7 +1,6 @@
 package com.lyzhi.monitor.client.core.core;
 
 import cn.hutool.core.util.IdUtil;
-import com.lyzhi.monitor.client.core.util.InstanceUtils;
 import com.lyzhi.monitor.common.abs.AbstractPackageConstructor;
 import com.lyzhi.monitor.common.domain.Alarm;
 import com.lyzhi.monitor.common.dto.AlarmPackage;
@@ -14,6 +13,7 @@ import com.lyzhi.monitor.common.util.jvm.JvmUtils;
 import com.lyzhi.monitor.common.util.server.NetUtils;
 import com.lyzhi.monitor.common.util.server.OsUtils;
 import com.lyzhi.monitor.common.util.server.ServerUtils;
+import com.lyzhi.monitor.client.core.util.InstanceUtils;
 import org.hyperic.sigar.SigarException;
 
 import java.nio.charset.Charset;
@@ -26,6 +26,8 @@ import java.util.TreeSet;
  * 包构造器
  * </p>
  *
+ * @author 皮锋
+ * @custom.date 2020年3月7日 下午2:52:50
  */
 public class PackageConstructor extends AbstractPackageConstructor {
 
@@ -38,7 +40,8 @@ public class PackageConstructor extends AbstractPackageConstructor {
      * @return {@link AlarmPackage}
      * @throws NetException   获取网络信息异常
      * @throws SigarException Sigar异常
-     *
+     * @author 皮锋
+     * @custom.date 2020年3月7日 下午3:02:46
      */
     @Override
     public AlarmPackage structureAlarmPackage(Alarm alarm) throws NetException, SigarException {
@@ -77,7 +80,8 @@ public class PackageConstructor extends AbstractPackageConstructor {
      * @return {@link HeartbeatPackage}
      * @throws NetException   获取网络信息异常
      * @throws SigarException Sigar异常
-     *
+     * @author 皮锋
+     * @custom.date 2020年3月7日 下午3:54:30
      */
     @Override
     public HeartbeatPackage structureHeartbeatPackage() throws NetException, SigarException {
@@ -108,7 +112,8 @@ public class PackageConstructor extends AbstractPackageConstructor {
      * @return {@link ServerPackage}
      * @throws SigarException Sigar异常
      * @throws NetException   获取网络信息异常
-     *
+     * @author 皮锋
+     * @custom.date 2020年3月7日 下午4:51:51
      */
     @Override
     public ServerPackage structureServerPackage() throws SigarException, NetException {
@@ -140,7 +145,8 @@ public class PackageConstructor extends AbstractPackageConstructor {
      * @return {@link JvmPackage}
      * @throws NetException   获取网络信息异常
      * @throws SigarException Sigar异常
-     *
+     * @author 皮锋
+     * @custom.date 2020/8/14 21:28
      */
     @Override
     public JvmPackage structureJvmPackage() throws NetException, SigarException {

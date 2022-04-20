@@ -13,6 +13,7 @@ public final class ZeroOrOneConstants {
      * 私有化构造方法
      * </p>
      *
+
      */
     private ZeroOrOneConstants() {
     }

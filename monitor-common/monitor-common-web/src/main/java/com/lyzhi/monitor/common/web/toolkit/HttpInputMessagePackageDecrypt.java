@@ -20,6 +20,8 @@ import java.nio.charset.StandardCharsets;
  * 处理HTTP输入消息：获取密文数据包，并且解密。
  * </p>
  *
+ * @author 皮锋
+ * @custom.date 2020年5月6日 下午12:37:38
  */
 @Slf4j
 public class HttpInputMessagePackageDecrypt implements HttpInputMessage {
@@ -34,7 +36,8 @@ public class HttpInputMessagePackageDecrypt implements HttpInputMessage {
      * </p>
      *
      * @param inputMessage HTTP输入消息
-     *
+     * @author 皮锋
+     * @custom.date 2021/4/11 10:51
      */
     @SneakyThrows
     public HttpInputMessagePackageDecrypt(HttpInputMessage inputMessage) {

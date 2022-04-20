@@ -8,7 +8,10 @@ import lombok.experimental.Accessors;
 import java.util.Date;
 
 /**
+ * <p>
  * 基础请求包
+ * </p>
+ *
  */
 @Data
 @ToString

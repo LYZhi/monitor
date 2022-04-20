@@ -1,7 +1,10 @@
 package com.lyzhi.monitor.common.exception;
 
 /**
+ * <p>
  * 监控平台通用异常
+ * </p>
+ *
  */
 public class MonitoringUniversalException extends RuntimeException {
 

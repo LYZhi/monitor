@@ -17,6 +17,7 @@ public class DataSizeUtil {
      * 私有化构造方法
      * </p>
      *
+
      */
     private DataSizeUtil() {
     }
@@ -28,7 +29,7 @@ public class DataSizeUtil {
      *
      * @param size double类型大小
      * @return 大小
-     *
+
      */
     public static String format(double size) {
         if (size <= 0) {

@@ -15,7 +15,7 @@ import java.lang.reflect.Type;
  * </p>
  *
  */
-@RestControllerAdvice(basePackages = "com.gitee.pifeng.monitoring.server.business.server.controller")
+@RestControllerAdvice(basePackages = "com.lyzhi.monitor.server.business.server.controller")
 public class RequestPackageDecryptAdvice implements RequestBodyAdvice {
 
     @Override

@@ -1,7 +1,6 @@
 package com.lyzhi.monitor.server.business.server.component;
 
 import com.alibaba.fastjson.JSON;
-import com.lyzhi.monitor.client.core.core.PackageConstructor;
 import com.lyzhi.monitor.common.constant.AlarmLevelEnums;
 import com.lyzhi.monitor.common.constant.MonitorTypeEnums;
 import com.lyzhi.monitor.common.domain.Alarm;
@@ -12,6 +11,7 @@ import com.lyzhi.monitor.common.util.ExceptionUtils;
 import com.lyzhi.monitor.common.util.MapUtils;
 import com.lyzhi.monitor.common.web.util.AccessObjectUtils;
 import com.lyzhi.monitor.common.web.util.ContextUtils;
+import com.lyzhi.monitor.server.business.server.core.PackageConstructor;
 import com.lyzhi.monitor.server.business.server.entity.MonitorLogException;
 import com.lyzhi.monitor.server.business.server.service.IAlarmService;
 import com.lyzhi.monitor.server.business.server.service.ILogExceptionService;
@@ -57,8 +57,9 @@ public class ExceptionLogAspect {
      * 异常日志切入点
      * </p>
      *
+     *
      */
-    @Pointcut("execution(* com.gitee.pifeng.monitoring.server.business.server..*.*(..))")
+    @Pointcut("execution(* com.lyzhi.monitor.server.business.server..*.*(..))")
     public void exceptionLogPointCut() {
     }
 

@@ -2,10 +2,10 @@ package com.lyzhi.monitor.server.business.server.controller;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.date.TimeInterval;
-import com.lyzhi.monitor.client.core.core.PackageConstructor;
 import com.lyzhi.monitor.common.domain.Result;
 import com.lyzhi.monitor.common.dto.BaseResponsePackage;
 import com.lyzhi.monitor.common.dto.JvmPackage;
+import com.lyzhi.monitor.server.business.server.core.PackageConstructor;
 import com.lyzhi.monitor.server.business.server.service.IJvmService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

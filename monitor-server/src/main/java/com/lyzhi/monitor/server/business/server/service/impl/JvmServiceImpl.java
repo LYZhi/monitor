@@ -3,20 +3,21 @@ package com.lyzhi.monitor.server.business.server.service.impl;
 import cn.hutool.core.util.ArrayUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import com.gitee.pifeng.monitoring.common.constant.ResultMsgConstants;
-import com.gitee.pifeng.monitoring.common.constant.ZeroOrOneConstants;
-import com.gitee.pifeng.monitoring.common.domain.Result;
-import com.gitee.pifeng.monitoring.common.domain.jvm.*;
-import com.gitee.pifeng.monitoring.common.dto.JvmPackage;
-import com.gitee.pifeng.monitoring.server.business.server.dao.*;
-import com.gitee.pifeng.monitoring.server.business.server.entity.*;
+import com.lyzhi.monitor.common.constant.ResultMsgConstants;
+import com.lyzhi.monitor.common.constant.ZeroOrOneConstants;
+import com.lyzhi.monitor.common.domain.Result;
+import com.lyzhi.monitor.common.domain.jvm.*;
+import com.lyzhi.monitor.common.dto.JvmPackage;
 import com.lyzhi.monitor.server.business.server.dao.*;
 import com.lyzhi.monitor.server.business.server.entity.*;
+import com.lyzhi.monitor.server.business.server.service.IJvmMemoryHistoryService;
 import com.lyzhi.monitor.server.business.server.service.IJvmService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -29,6 +30,12 @@ import java.util.Map;
  */
 @Service
 public class JvmServiceImpl implements IJvmService {
+
+    /**
+     * java虚拟机内存历史记录服务接口
+     */
+    @Autowired
+    private IJvmMemoryHistoryService jvmMemoryHistoryService;
 
     /**
      * 应用实例数据访问对象
@@ -81,8 +88,9 @@ public class JvmServiceImpl implements IJvmService {
      * @return {@link Result}
      *
      */
-    @Transactional(rollbackFor = Throwable.class)
+    //@Transactional(rollbackFor = Throwable.class)
     @Override
+    @Retryable
     public Result dealJvmPackage(JvmPackage jvmPackage) {
         // 先判断有没有此应用实例
         LambdaQueryWrapper<MonitorInstance> lambdaQueryWrapper = new LambdaQueryWrapper<>();
@@ -252,6 +260,8 @@ public class JvmServiceImpl implements IJvmService {
         String instanceId = jvmPackage.getInstanceId();
         // 内存信息
         Map<String, MemoryDomain.MemoryUsageDomain> memoryUsageDomainMap = jvmPackage.getJvm().getMemoryDomain().getMemoryUsageDomainMap();
+        // 要添加的内存信息
+        List<MonitorJvmMemoryHistory> saveMonitorJvmMemoryHistory = new ArrayList<>();
         for (Map.Entry<String, MemoryDomain.MemoryUsageDomain> entry : memoryUsageDomainMap.entrySet()) {
             // 内存类型
             String memoryType = entry.getKey();
@@ -267,8 +277,9 @@ public class JvmServiceImpl implements IJvmService {
             monitorJvmMemoryHistory.setMax(memoryPoolDomain.getMax());
             monitorJvmMemoryHistory.setInsertTime(jvmPackage.getDateTime());
             monitorJvmMemoryHistory.setUpdateTime(jvmPackage.getDateTime());
-            this.monitorJvmMemoryHistoryDao.insert(monitorJvmMemoryHistory);
+            saveMonitorJvmMemoryHistory.add(monitorJvmMemoryHistory);
         }
+        this.jvmMemoryHistoryService.saveBatch(saveMonitorJvmMemoryHistory);
     }
 
     /**

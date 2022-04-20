@@ -28,7 +28,7 @@ public class MonitorNet {
      * 主键ID
      */
     @TableId(value = "ID", type = IdType.AUTO)
-    private Integer id;
+    private Long id;
 
     /**
      * IP地址（来源）
@@ -58,7 +58,7 @@ public class MonitorNet {
      * 平均响应时间（毫秒）
      */
     @TableField("AVG_TIME")
-    private String avgTime;
+    private Double avgTime;
 
     /**
      * 离线次数

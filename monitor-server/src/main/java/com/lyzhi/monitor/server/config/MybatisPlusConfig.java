@@ -3,8 +3,8 @@ package com.lyzhi.monitor.server.config;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize;
-import com.github.pagehelper.PageHelper;
 import com.lyzhi.monitor.common.web.toolkit.UniqueBeanNameGenerator;
+import com.github.pagehelper.PageHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
@@ -70,6 +70,21 @@ public class MybatisPlusConfig {
         pageHelper.setProperties(properties);
         log.info("MyBatis分页插件PageHelper配置成功！");
         return pageHelper;
+    }
+
+    /**
+     * <p>
+     * 配置自定义SQL注入器
+     * </p>
+     *
+     * @return {@link EasySqlInjector}
+     *
+     */
+    @Bean
+    public EasySqlInjector easySqlInjector() {
+        EasySqlInjector easySqlInjector = new EasySqlInjector();
+        log.info("自定义SQL注入器配置成功！");
+        return easySqlInjector;
     }
 
     /**

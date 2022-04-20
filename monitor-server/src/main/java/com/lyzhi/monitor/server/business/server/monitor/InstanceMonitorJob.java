@@ -1,7 +1,6 @@
 package com.lyzhi.monitor.server.business.server.monitor;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.lyzhi.monitor.client.core.core.PackageConstructor;
 import com.lyzhi.monitor.common.constant.AlarmLevelEnums;
 import com.lyzhi.monitor.common.constant.AlarmReasonEnums;
 import com.lyzhi.monitor.common.constant.MonitorTypeEnums;
@@ -11,6 +10,7 @@ import com.lyzhi.monitor.common.dto.AlarmPackage;
 import com.lyzhi.monitor.common.exception.NetException;
 import com.lyzhi.monitor.common.util.DateTimeUtils;
 import com.lyzhi.monitor.server.business.server.core.MonitoringConfigPropertiesLoader;
+import com.lyzhi.monitor.server.business.server.core.PackageConstructor;
 import com.lyzhi.monitor.server.business.server.entity.MonitorInstance;
 import com.lyzhi.monitor.server.business.server.service.IAlarmService;
 import com.lyzhi.monitor.server.business.server.service.IInstanceService;
@@ -32,6 +32,7 @@ import java.util.List;
  * <p>
  * 在项目启动后，定时扫描“MONITOR_INSTANCE”表中的所有应用实例，更新应用实例状态，发送告警。
  * </p>
+ *
  */
 @Slf4j
 @Component
@@ -56,6 +57,7 @@ public class InstanceMonitorJob extends QuartzJobBean implements CommandLineRunn
      * </p>
      *
      * @param args 传入的主方法参数
+     *
      */
     @Override
     public void run(String... args) {
@@ -75,6 +77,7 @@ public class InstanceMonitorJob extends QuartzJobBean implements CommandLineRunn
      * </p>
      *
      * @param jobExecutionContext 作业执行上下文
+     *
      */
     @Override
     protected void executeInternal(JobExecutionContext jobExecutionContext) {
@@ -111,6 +114,7 @@ public class InstanceMonitorJob extends QuartzJobBean implements CommandLineRunn
      * </p>
      *
      * @param instance 实例
+     *
      */
     private void onLine(MonitorInstance instance) {
         // 是否在线
@@ -140,6 +144,7 @@ public class InstanceMonitorJob extends QuartzJobBean implements CommandLineRunn
      * </p>
      *
      * @param instance 实例
+     *
      */
     private void offLine(MonitorInstance instance) {
         // 是否在线
@@ -173,6 +178,7 @@ public class InstanceMonitorJob extends QuartzJobBean implements CommandLineRunn
      * @param instance        应用实例详情
      * @throws NetException   获取网络信息异常
      * @throws SigarException Sigar异常
+     *
      */
     private void sendAlarmInfo(String title, AlarmLevelEnums alarmLevelEnum, AlarmReasonEnums alarmReasonEnum, MonitorInstance instance) throws NetException, SigarException {
         StringBuilder builder = new StringBuilder();

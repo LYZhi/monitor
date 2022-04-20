@@ -20,8 +20,7 @@ public interface IJvmService {
      *
      * @param jvmPackage java虚拟机信息包
      * @return {@link Result}
-     * @author 皮锋
-     * @custom.date 2020/8/27 17:45
+     *
      */
     Result dealJvmPackage(JvmPackage jvmPackage);
 
@@ -32,8 +31,7 @@ public interface IJvmService {
      *
      * @param historyTime 时间点，清理这个时间点以前的数据
      * @return 清理记录数
-     * @author 皮锋
-     * @custom.date 2021/12/9 20:46
+     *
      */
     int clearHistoryData(Date historyTime);
 }

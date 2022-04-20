@@ -69,6 +69,7 @@ public class MonitoringConfigPropertiesLoader {
      * 项目启动时从数据库中获取监控服务端配置，并保存到静态变量中。
      * </p>
      *
+     *
      */
     @Bean
     public void init() {
@@ -122,8 +123,8 @@ public class MonitoringConfigPropertiesLoader {
         MonitoringAlarmProperties alarmProperties = new MonitoringAlarmProperties(false, AlarmLevelEnums.INFO, new AlarmWayEnums[]{AlarmWayEnums.MAIL, AlarmWayEnums.SMS}, alarmSmsProperties, alarmMailProperties);
         // 网络配置属性
         MonitoringNetworkProperties networkProperties = new MonitoringNetworkProperties(true);
-        // TCP/IP配置属性
-        MonitoringTcpIpProperties tcpIpProperties = new MonitoringTcpIpProperties(true);
+        // TCP配置属性
+        MonitoringTcpProperties tcpProperties = new MonitoringTcpProperties(true);
         // 服务器CPU配置属性
         MonitoringServerCpuProperties serverCpuProperties = new MonitoringServerCpuProperties(90D, AlarmLevelEnums.INFO);
         // 服务器磁盘配置属性
@@ -137,7 +138,7 @@ public class MonitoringConfigPropertiesLoader {
         // 数据库配置
         MonitoringDbProperties dbProperties = new MonitoringDbProperties(true, dbTableSpaceProperties);
         // 监控配置属性
-        MonitoringProperties properties = new MonitoringProperties(5, alarmProperties, networkProperties, tcpIpProperties, serverProperties, dbProperties);
+        MonitoringProperties properties = new MonitoringProperties(5, alarmProperties, networkProperties, tcpProperties, serverProperties, dbProperties);
         // 查询数据库中是否有配置记录
         MonitorConfig monitorConfig = this.configService.getOne(new LambdaQueryWrapper<>());
         if (monitorConfig == null) {
@@ -155,6 +156,7 @@ public class MonitoringConfigPropertiesLoader {
      * <p>
      * 首次执行延迟5分钟，然后每5分钟从数据库获取一次最新的配置信息，更新内存中的配置。
      * </p>
+     *
      *
      */
     @Scheduled(initialDelay = 300000, fixedDelay = 300000)

@@ -22,7 +22,7 @@ public class AsyncConfig implements AsyncConfigurer {
      * 异步方法调用时要使用的执行器实例。
      * </p>
      *
-     * @return
+     *
      */
     @Override
     public Executor getAsyncExecutor() {

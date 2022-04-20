@@ -2,6 +2,7 @@ package com.lyzhi.monitor.server.business.server.component;
 
 import com.lyzhi.monitor.common.dto.ServerPackage;
 import com.lyzhi.monitor.common.threadpool.ThreadPool;
+import com.lyzhi.monitor.server.business.server.controller.ServerController;
 import com.lyzhi.monitor.server.inf.IServerMonitoringListener;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
@@ -32,6 +33,7 @@ public class ServerAspect {
      * <p>
      * 定义切入点，切入点为{@link ServerController#acceptServerPackage(ServerPackage)}这一个方法
      * </p>
+     *
      *
      */
     @Pointcut("execution(public * com.lyzhi.monitor.server.business.server.controller.ServerController.acceptServerPackage(..))")

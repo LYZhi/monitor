@@ -1,10 +1,10 @@
 package com.lyzhi.monitor.server.business.server.component;
 
-import com.lyzhi.monitor.client.core.core.PackageConstructor;
 import com.lyzhi.monitor.common.domain.Result;
 import com.lyzhi.monitor.common.dto.BaseResponsePackage;
 import com.lyzhi.monitor.common.dto.CiphertextPackage;
 import com.lyzhi.monitor.common.web.toolkit.HttpInputMessagePackageEncrypt;
+import com.lyzhi.monitor.server.business.server.core.PackageConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
@@ -21,7 +21,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  * </p>
  *
  */
-@RestControllerAdvice(basePackages = "com.gitee.pifeng.monitoring.server.business.server.controller")
+@RestControllerAdvice(basePackages = "com.lyzhi.monitor.server.business.server.controller")
 @Slf4j
 public class ResponsePackageEncryptAdvice implements ResponseBodyAdvice<Object> {
 

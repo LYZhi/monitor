@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  * <p>
- * TCP/IP信息表
+ * TCP信息表
  * </p>
  *
  */
@@ -20,8 +20,8 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@TableName("MONITOR_TCPIP")
-public class MonitorTcpIp {
+@TableName("MONITOR_TCP")
+public class MonitorTcp {
 
     /**
      * 主键ID
@@ -30,16 +30,16 @@ public class MonitorTcpIp {
     private Long id;
 
     /**
-     * IP地址（来源）
+     * 主机名（来源）
      */
-    @TableField("IP_SOURCE")
-    private String ipSource;
+    @TableField("HOSTNAME_SOURCE")
+    private String hostnameSource;
 
     /**
-     * IP地址（目的地）
+     * 主机名（目的地）
      */
-    @TableField("IP_TARGET")
-    private String ipTarget;
+    @TableField("HOSTNAME_TARGET")
+    private String hostnameTarget;
 
     /**
      * 端口号
@@ -54,16 +54,16 @@ public class MonitorTcpIp {
     private String descr;
 
     /**
-     * 协议
-     */
-    @TableField("PROTOCOL")
-    private String protocol;
-
-    /**
      * 状态（0：不通，1：正常）
      */
     @TableField("STATUS")
     private String status;
+
+    /**
+     * 平均响应时间（毫秒）
+     */
+    @TableField("AVG_TIME")
+    private Long avgTime;
 
     /**
      * 离线次数

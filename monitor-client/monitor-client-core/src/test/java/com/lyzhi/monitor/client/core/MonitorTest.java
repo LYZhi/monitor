@@ -16,9 +16,6 @@ import java.util.concurrent.TimeUnit;
  * <p>
  * 测试监控客户端入口类
  * </p>
- *
- * @author 皮锋
- * @custom.date 2020/8/17 9:53
  */
 public class MonitorTest {
 
@@ -26,9 +23,6 @@ public class MonitorTest {
      * <p>
      * 测试发送告警信息
      * </p>
-     *
-     * @author 皮锋
-     * @custom.date 2020/8/17 9:57
      */
     @Test
     public void testSendAlarm() {
@@ -36,19 +30,25 @@ public class MonitorTest {
         Monitor.start();
         // 业务埋点监控：定时监控业务运行情况
         ScheduledExecutorService service = Monitor.buryingPoint(() -> {
-            // 封装告警信息
-            Alarm alarm = Alarm.builder().alarmLevel(AlarmLevelEnums.INFO)
-                    .monitorType(MonitorTypeEnums.CUSTOM)
-                    .title("测试发送告警信息")
-                    .msg("测试发送告警信息")
-                    .charset(Charsets.UTF_8)
-                    .isTest(false)
-                    .build();
-            // 发送告警信息
+            // 假如发现了业务异常，用下面的代码发送告警
+            Alarm alarm = new Alarm();
+            alarm.setAlarmLevel(AlarmLevelEnums.ERROR);
+            alarm.setTitle("业务埋点监控");
+            alarm.setTest(false);
+            alarm.setCharset(Charsets.UTF_8);
+            alarm.setMsg("测试普通maven程序业务埋点监控！");
+            // alarm.setCode("001");
+            alarm.setMonitorType(MonitorTypeEnums.CUSTOM);
             Result result = Monitor.sendAlarm(alarm);
-            Console.log(result.toJsonString());
-        }, 5, 60, TimeUnit.SECONDS, ThreadTypeEnums.IO_INTENSIVE_THREAD);
+            System.out.println("发送业务告警结果：" + result.toJsonString());
+        }, 0, 1, TimeUnit.SECONDS, ThreadTypeEnums.IO_INTENSIVE_THREAD);
 
-        service.shutdown();
+
+//        service.shutdown();
+
+        // 防止主线程退出（测试代码才需要）
+        while (true) {
+        }
+
     }
 }

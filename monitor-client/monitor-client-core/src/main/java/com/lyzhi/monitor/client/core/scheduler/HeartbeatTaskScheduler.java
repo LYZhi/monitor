@@ -15,8 +15,6 @@ import java.util.concurrent.TimeUnit;
  * 心跳任务调度器
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月5日 下午2:54:21
  */
 public class HeartbeatTaskScheduler {
 
@@ -25,8 +23,7 @@ public class HeartbeatTaskScheduler {
      * 私有化构造方法
      * </p>
      *
-     * @author 皮锋
-     * @custom.date 2020/10/27 13:26
+     *
      */
     private HeartbeatTaskScheduler() {
     }
@@ -37,8 +34,7 @@ public class HeartbeatTaskScheduler {
      * 则由类{@link ConfigLoader}提供默认心跳频率。
      * </p>
      *
-     * @author 皮锋
-     * @custom.date 2020年3月5日 下午2:56:47
+     *
      */
     public static void run() {
         final ScheduledExecutorService seService = new ScheduledThreadPoolExecutor(

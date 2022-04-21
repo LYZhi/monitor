@@ -18,8 +18,6 @@ import java.util.Properties;
  * 监控客户端加载监控配置文件信息
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月5日 下午3:06:21
  */
 @Slf4j
 public class ConfigLoader {
@@ -29,8 +27,7 @@ public class ConfigLoader {
      * 私有化构造方法
      * </p>
      *
-     * @author 皮锋
-     * @custom.date 2020/10/27 13:26
+     *
      */
     private ConfigLoader() {
     }
@@ -51,8 +48,7 @@ public class ConfigLoader {
      * @throws NotFoundConfigParamException 找不到配置参数异常
      * @throws NotFoundConfigFileException  找不到配置文件异常
      * @throws ErrorConfigParamException    错误的配置参数异常
-     * @author 皮锋
-     * @custom.date 2020年3月5日 下午3:36:32
+     *
      */
     public static MonitoringProperties load(String configPath, String configName)
             throws NotFoundConfigParamException, NotFoundConfigFileException, ErrorConfigParamException {
@@ -86,8 +82,7 @@ public class ConfigLoader {
      * @param properties 配置信息
      * @throws NotFoundConfigParamException 找不到配置参数异常
      * @throws ErrorConfigParamException    错误的配置参数异常
-     * @author 皮锋
-     * @custom.date 2020年3月5日 下午3:51:47
+     *
      */
     private static void analysis(Properties properties) throws NotFoundConfigParamException, ErrorConfigParamException {
         // 封装数据
@@ -106,8 +101,7 @@ public class ConfigLoader {
      * @param properties 配置属性
      * @throws NotFoundConfigParamException 找不到配置参数异常
      * @throws ErrorConfigParamException    错误的配置参数异常
-     * @author 皮锋
-     * @custom.date 2020/10/27 20:29
+     *
      */
     private static void wrapMonitoringServerProperties(Properties properties) throws NotFoundConfigParamException, ErrorConfigParamException {
         // 监控服务端url
@@ -151,8 +145,7 @@ public class ConfigLoader {
      * @param properties 配置属性
      * @throws ErrorConfigParamException    错误的配置参数异常
      * @throws NotFoundConfigParamException 找不到配置参数异常
-     * @author 皮锋
-     * @custom.date 2020/10/27 20:29
+     *
      */
     private static void wrapMonitoringOwnProperties(Properties properties) throws ErrorConfigParamException, NotFoundConfigParamException {
         // 缺省[实例次序(整数)，默认为1]
@@ -199,8 +192,7 @@ public class ConfigLoader {
      *
      * @param properties 配置属性
      * @throws ErrorConfigParamException 错误的配置参数异常
-     * @author 皮锋
-     * @custom.date 2020/10/27 20:32
+     *
      */
     private static void wrapMonitoringHeartbeatProperties(Properties properties) throws ErrorConfigParamException {
         // 缺省[与服务端或者代理端发心跳包的频率（秒），默认30秒，最小不能小于30秒]
@@ -223,8 +215,7 @@ public class ConfigLoader {
      *
      * @param properties 配置属性
      * @throws ErrorConfigParamException 错误的配置参数异常
-     * @author 皮锋
-     * @custom.date 2020/10/27 20:30
+     *
      */
     private static void wrapMonitoringServerInfoProperties(Properties properties) throws ErrorConfigParamException {
         // 缺省[是否采集服务器信息，默认false]
@@ -258,8 +249,7 @@ public class ConfigLoader {
      *
      * @param properties 配置属性
      * @throws ErrorConfigParamException 错误的配置参数异常
-     * @author 皮锋
-     * @custom.date 2020/10/27 20:31
+     *
      */
     private static void wrapMonitoringJvmInfoProperties(Properties properties) throws ErrorConfigParamException {
         // 缺省[是否采集Java虚拟机信息，默认false]

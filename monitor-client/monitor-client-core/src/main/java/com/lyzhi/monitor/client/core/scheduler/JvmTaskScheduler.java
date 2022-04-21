@@ -15,8 +15,6 @@ import java.util.concurrent.TimeUnit;
  * 发送Java虚拟机信息任务调度器
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020/8/14 21:20
  */
 public class JvmTaskScheduler {
 
@@ -25,8 +23,7 @@ public class JvmTaskScheduler {
      * 私有化构造方法
      * </p>
      *
-     * @author 皮锋
-     * @custom.date 2020/10/27 13:26
+     *
      */
     private JvmTaskScheduler() {
     }
@@ -38,8 +35,7 @@ public class JvmTaskScheduler {
      * 则由类{@link ConfigLoader}提供默认的发送Java虚拟机频率。
      * </p>
      *
-     * @author 皮锋
-     * @custom.date 2020年3月7日 下午4:43:35
+     *
      */
     public static void run() {
         // 是否发送Java虚拟机

@@ -7,8 +7,6 @@ import com.lyzhi.monitor.client.core.core.ConfigLoader;
  * URL地址
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月6日 下午2:23:41
  */
 public final class UrlConstants {
 
@@ -17,8 +15,7 @@ public final class UrlConstants {
      * 私有化构造方法
      * </p>
      *
-     * @author 皮锋
-     * @custom.date 2020/10/27 13:26
+     *
      */
     private UrlConstants() {
     }

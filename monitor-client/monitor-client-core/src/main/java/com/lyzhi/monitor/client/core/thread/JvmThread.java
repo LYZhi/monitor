@@ -17,8 +17,6 @@ import java.io.IOException;
  * 发送Java虚拟机信息线程
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020/8/14 21:24
  */
 @Slf4j
 public class JvmThread implements Runnable {
@@ -28,8 +26,7 @@ public class JvmThread implements Runnable {
      * 构建+发送Java虚拟机信息包
      * </p>
      *
-     * @author 皮锋
-     * @custom.date 2020/8/14 21:25
+     *
      */
     @Override
     public void run() {

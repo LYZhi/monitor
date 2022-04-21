@@ -41,8 +41,6 @@ import java.util.concurrent.TimeUnit;
  * </p>
  * 参考：https://blog.csdn.net/lovomap151/article/details/78879904
  *
- * @author 皮锋
- * @custom.date 2021/12/5 18:33
  * @since 1.0.0
  */
 @Slf4j
@@ -89,8 +87,7 @@ public class EnumPoolingHttpUtils {
      * </p>
      *
      * @return {@link EnumPoolingHttpUtils}
-     * @author 皮锋
-     * @custom.date 2020/8/22 9:11
+     *
      */
     public static EnumPoolingHttpUtils getInstance() {
         return Singleton.INSTANCE.getInstance();
@@ -184,8 +181,7 @@ public class EnumPoolingHttpUtils {
      * @param json JSON字符串格式的数据
      * @return 返回数据
      * @throws IOException IO异常
-     * @author 皮锋
-     * @custom.date 2020年3月5日 下午5:33:56
+     *
      */
     public String sendHttpPostByJson(String url, String json) throws IOException {
         HttpPost httpPost = new HttpPost(url);

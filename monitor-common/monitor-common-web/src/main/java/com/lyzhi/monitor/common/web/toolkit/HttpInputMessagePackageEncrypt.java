@@ -15,8 +15,6 @@ import java.nio.charset.StandardCharsets;
  * 处理HTTP输出消息：获取明文数据包，并且加密。
  * </p>
  *
- * @author 皮锋
- * @custom.date 2021/4/11 10:43
  */
 @Slf4j
 public class HttpInputMessagePackageEncrypt {
@@ -28,8 +26,7 @@ public class HttpInputMessagePackageEncrypt {
      *
      * @param inputOjbect 明文数据包
      * @return 密文数据包
-     * @author 皮锋
-     * @custom.date 2021/4/11 10:57
+     *
      */
     public CiphertextPackage encrypt(Object inputOjbect) {
         // 转成json字符串

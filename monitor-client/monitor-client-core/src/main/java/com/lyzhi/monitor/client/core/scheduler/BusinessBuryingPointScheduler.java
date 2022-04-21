@@ -11,8 +11,6 @@ import java.util.concurrent.TimeUnit;
  * 业务埋点任务调度器
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020/8/24 20:25
  */
 public class BusinessBuryingPointScheduler {
 
@@ -21,8 +19,7 @@ public class BusinessBuryingPointScheduler {
      * 私有化构造方法
      * </p>
      *
-     * @author 皮锋
-     * @custom.date 2020/10/27 13:26
+     *
      */
     private BusinessBuryingPointScheduler() {
     }
@@ -38,8 +35,7 @@ public class BusinessBuryingPointScheduler {
      * @param unit           时间单位
      * @param threadTypeEnum 线程类型：CPU密集型、IO密集型
      * @return {@link ScheduledExecutorService}
-     * @author 皮锋
-     * @custom.date 2020年3月5日 下午2:56:47
+     *
      */
     public static ScheduledExecutorService run(Runnable command, long initialDelay, long period, TimeUnit unit, ThreadTypeEnums threadTypeEnum) {
         // CPU密集型

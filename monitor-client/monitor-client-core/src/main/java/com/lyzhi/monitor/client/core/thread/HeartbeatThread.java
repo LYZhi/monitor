@@ -17,8 +17,6 @@ import java.io.IOException;
  * 心跳线程
  * </p>
  *
- * @author 皮锋
- * @custom.date 2020年3月5日 下午2:50:46
  */
 @Slf4j
 public class HeartbeatThread implements Runnable {
@@ -28,8 +26,7 @@ public class HeartbeatThread implements Runnable {
      * 构建+发送心跳包
      * </p>
      *
-     * @author 皮锋
-     * @custom.date 2020/4/9 17:32
+     *
      */
     @Override
     public void run() {

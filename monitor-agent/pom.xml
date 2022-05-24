@@ -28,10 +28,9 @@
 			<groupId>com.lyzhi</groupId>
 			<artifactId>monitor-common-web</artifactId>
 		</dependency>
-		<!-- springboot项目集成监控依赖，使之拥有监控功能 -->
 		<dependency>
 			<groupId>com.lyzhi</groupId>
-			<artifactId>monitor-client-spring-boot-starter</artifactId>
+			<artifactId>monitor-client-core</artifactId>
 		</dependency>
 
 		<!--lombok依赖 -->

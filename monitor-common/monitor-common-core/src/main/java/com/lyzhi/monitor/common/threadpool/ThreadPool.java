@@ -113,7 +113,8 @@ public class ThreadPool {
     /**
      * 延迟/周期执行线程池（CPU密集型）
      */
-    public static final ScheduledExecutorService COMMON_CPU_INTENSIVE_SCHEDULED_THREAD_POOL = new ScheduledThreadPoolExecutor(
+    public static final ScheduledExecutorService
+            COMMON_CPU_INTENSIVE_SCHEDULED_THREAD_POOL = new ScheduledThreadPoolExecutor(
             // 线程数 = Ncpu /（1 - 阻塞系数），CPU密集型阻塞系数相对较小
             (int) (ProcessorsUtils.getAvailableProcessors() / (1 - 0.2)),
             new BasicThreadFactory.Builder()

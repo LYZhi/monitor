@@ -60,7 +60,7 @@ public class MailServiceImpl implements IMailService {
             //发给谁，对方邮箱
             messageHelper.setTo(mail.getEmail());
             // 标题
-            messageHelper.setSubject(mail.getTitle());
+            messageHelper.setSubject("monitor监控告警——"+mail.getLevel());
             // 使用模板thymeleaf
             Context context = new Context();
             //定义模板数据
@@ -69,7 +69,7 @@ public class MailServiceImpl implements IMailService {
             context.setVariable("level", mail.getLevel());
             context.setVariables(mail.getAttachment());
             // 获取thymeleaf的html模板
-            String emailContent = this.templateEngine.process("mail/mail-alarm-template2", context);
+            String emailContent = this.templateEngine.process("mail/mail-alarm-template", context);
             log.info("告警邮件HTML：\r\n{}", emailContent);
             messageHelper.setText(emailContent, true);
             // 发送邮件

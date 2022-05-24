@@ -177,26 +177,34 @@ public class AlarmServiceImpl implements IAlarmService {
         AlarmWayEnums[] alarmWayEnums = MonitoringConfigPropertiesLoader.getMonitoringProperties().getAlarmProperties().getWayEnums();
         List<AlarmWayEnums> alarmWayEnumsList = Arrays.asList(alarmWayEnums);
         // 告警方式为短信告警和邮件告警
-        if (alarmWayEnumsList.contains(AlarmWayEnums.SMS) && alarmWayEnumsList.contains(AlarmWayEnums.MAIL)) {
-            // 处理短信告警
-            this.dealSmsAlarm(result, alarmTitle, alarmMsg, alarmLevelEnum);
-            // 告警发送完更新数据库中告警发送结果
-            this.updateMonitorAlarmRecordToDb(result, alarmUuid, AlarmWayEnums.SMS);
-            // 处理邮件告警
-            this.dealMailAlarm(result, alarmTitle, alarmMsg, alarmLevelEnum);
-            // 告警发送完更新数据库中告警发送结果
-            this.updateMonitorAlarmRecordToDb(result, alarmUuid, AlarmWayEnums.MAIL);
-        } else if (alarmWayEnumsList.contains(AlarmWayEnums.SMS)) {
-            // 处理短信告警
-            this.dealSmsAlarm(result, alarmTitle, alarmMsg, alarmLevelEnum);
-            // 告警发送完更新数据库中告警发送结果
-            this.updateMonitorAlarmRecordToDb(result, alarmUuid, AlarmWayEnums.SMS);
-        } else if (alarmWayEnumsList.contains(AlarmWayEnums.MAIL)) {
+        if (alarmWayEnumsList.contains(AlarmWayEnums.MAIL)) {
             // 处理邮件告警
             this.dealMailAlarm(result, alarmTitle, alarmMsg, alarmLevelEnum);
             // 告警发送完更新数据库中告警发送结果
             this.updateMonitorAlarmRecordToDb(result, alarmUuid, AlarmWayEnums.MAIL);
         }
+
+
+//        if (alarmWayEnumsList.contains(AlarmWayEnums.SMS) && alarmWayEnumsList.contains(AlarmWayEnums.MAIL)) {
+//            // 处理短信告警
+//            this.dealSmsAlarm(result, alarmTitle, alarmMsg, alarmLevelEnum);
+//            // 告警发送完更新数据库中告警发送结果
+//            this.updateMonitorAlarmRecordToDb(result, alarmUuid, AlarmWayEnums.SMS);
+//            // 处理邮件告警
+//            this.dealMailAlarm(result, alarmTitle, alarmMsg, alarmLevelEnum);
+//            // 告警发送完更新数据库中告警发送结果
+//            this.updateMonitorAlarmRecordToDb(result, alarmUuid, AlarmWayEnums.MAIL);
+//        } else if (alarmWayEnumsList.contains(AlarmWayEnums.SMS)) {
+//            // 处理短信告警
+//            this.dealSmsAlarm(result, alarmTitle, alarmMsg, alarmLevelEnum);
+//            // 告警发送完更新数据库中告警发送结果
+//            this.updateMonitorAlarmRecordToDb(result, alarmUuid, AlarmWayEnums.SMS);
+//        } else if (alarmWayEnumsList.contains(AlarmWayEnums.MAIL)) {
+//            // 处理邮件告警
+//            this.dealMailAlarm(result, alarmTitle, alarmMsg, alarmLevelEnum);
+//            // 告警发送完更新数据库中告警发送结果
+//            this.updateMonitorAlarmRecordToDb(result, alarmUuid, AlarmWayEnums.MAIL);
+//        }
     }
 
     /**

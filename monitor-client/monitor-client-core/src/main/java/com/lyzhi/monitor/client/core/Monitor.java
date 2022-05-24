@@ -131,7 +131,8 @@ public class Monitor {
      * @param threadTypeEnum 线程类型：CPU密集型、IO密集型
      * @return {@link ScheduledExecutorService}
      */
-    public static ScheduledExecutorService buryingPoint(Runnable command, long initialDelay, long period, TimeUnit unit, ThreadTypeEnums threadTypeEnum) {
+    public static ScheduledExecutorService buryingPoint(
+            Runnable command, long initialDelay, long period, TimeUnit unit, ThreadTypeEnums threadTypeEnum) {
         return BusinessBuryingPointScheduler.run(command, initialDelay, period, unit, threadTypeEnum);
     }
 

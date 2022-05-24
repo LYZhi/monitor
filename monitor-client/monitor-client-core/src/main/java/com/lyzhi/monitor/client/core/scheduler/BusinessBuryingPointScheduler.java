@@ -27,6 +27,7 @@ public class BusinessBuryingPointScheduler {
     /**
      * <p>
      * 定时运行业务埋点监控任务
+     * CPU密集型需要提供更多的线程进行处理，而IO密集型则不需要过多的线程
      * </p>
      *
      * @param command        要执行的任务

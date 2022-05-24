@@ -83,6 +83,7 @@ public class PackageConstructor extends AbstractPackageConstructor {
     public HeartbeatPackage structureHeartbeatPackage() throws NetException, SigarException {
         HeartbeatPackage heartbeatPackage = new HeartbeatPackage();
         heartbeatPackage.setId(IdUtil.randomUUID());
+        heartbeatPackage.setDateTime(new Date());
         heartbeatPackage.setInstanceEndpoint(ConfigLoader.MONITORING_PROPERTIES.getOwnProperties().getInstanceEndpoint());
         heartbeatPackage.setInstanceId(InstanceUtils.getInstanceId());
         heartbeatPackage.setInstanceName(ConfigLoader.MONITORING_PROPERTIES.getOwnProperties().getInstanceName());
@@ -95,7 +96,6 @@ public class PackageConstructor extends AbstractPackageConstructor {
         networkChain.add(ip);
         heartbeatPackage.setNetworkChain(networkChain);
         heartbeatPackage.setComputerName(OsUtils.getComputerName());
-        heartbeatPackage.setDateTime(new Date());
         heartbeatPackage.setRate(ConfigLoader.MONITORING_PROPERTIES.getHeartbeatProperties().getRate());
         return heartbeatPackage;
     }

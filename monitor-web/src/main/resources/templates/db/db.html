@@ -43,7 +43,7 @@
                         <select name="dbType">
                             <option value="">所有</option>
                             <option value="MySQL">MySQL</option>
-                            <option value="Oracle">Oracle</option>
+<!--                            <option value="Oracle">Oracle</option>-->
                             <option value="Redis">Redis</option>
                             <option value="Mongo">Mongo</option>
                         </select>
@@ -147,9 +147,9 @@
                     if (jq(this).text().toLowerCase() === 'MySQL'.toLowerCase()) {
                         jq(this).html('<span><img src="' + ctxPath + 'images/db/mysql-small.png" alt="MySQL" title="MySQL"></span>');
                     }
-                    if (jq(this).text().toLowerCase() === 'Oracle'.toLowerCase()) {
-                        jq(this).html('<span><img src="' + ctxPath + 'images/db/oracle-small.png" alt="Oracle" title="Oracle"></span>');
-                    }
+                    // if (jq(this).text().toLowerCase() === 'Oracle'.toLowerCase()) {
+                    //     jq(this).html('<span><img src="' + ctxPath + 'images/db/oracle-small.png" alt="Oracle" title="Oracle"></span>');
+                    // }
                     if (jq(this).text().toLowerCase() === 'Redis'.toLowerCase()) {
                         jq(this).html('<span><img src="' + ctxPath + 'images/db/redis-small.png" alt="Redis" title="Redis"></span>');
                     }

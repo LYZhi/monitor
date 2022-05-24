@@ -68,10 +68,10 @@ public class MonitorConfigServiceImpl extends ServiceImpl<IMonitorConfigDao, Mon
         monitorConfigPageFormVo.setAlarmLevel(properties.getAlarmProperties().getLevelEnum().name());
         monitorConfigPageFormVo.setAlarmWay(AlarmWayEnums.enums2Strs(properties.getAlarmProperties().getWayEnums()));
         monitorConfigPageFormVo.setAlarmMailEmills(ArrayUtil.join(properties.getAlarmProperties().getMailProperties().getEmills(), ";"));
-        monitorConfigPageFormVo.setAlarmSmsAddress(properties.getAlarmProperties().getSmsProperties().getAddress());
-        monitorConfigPageFormVo.setAlarmSmsEnterprise(properties.getAlarmProperties().getSmsProperties().getEnterpriseEnum().name());
-        monitorConfigPageFormVo.setAlarmSmsPhoneNumbers(ArrayUtil.join(properties.getAlarmProperties().getSmsProperties().getPhoneNumbers(), ";"));
-        monitorConfigPageFormVo.setAlarmSmsProtocol(properties.getAlarmProperties().getSmsProperties().getProtocolTypeEnum().name());
+//        monitorConfigPageFormVo.setAlarmSmsAddress(properties.getAlarmProperties().getSmsProperties().getAddress());
+//        monitorConfigPageFormVo.setAlarmSmsEnterprise(properties.getAlarmProperties().getSmsProperties().getEnterpriseEnum().name());
+//        monitorConfigPageFormVo.setAlarmSmsPhoneNumbers(ArrayUtil.join(properties.getAlarmProperties().getSmsProperties().getPhoneNumbers(), ";"));
+//        monitorConfigPageFormVo.setAlarmSmsProtocol(properties.getAlarmProperties().getSmsProperties().getProtocolTypeEnum().name());
         monitorConfigPageFormVo.setServerEnable(properties.getServerProperties().isEnable() ? 1 : 0);
         monitorConfigPageFormVo.setServerCpuOverloadThreshold(properties.getServerProperties().getServerCpuProperties().getOverloadThreshold());
         monitorConfigPageFormVo.setServerCpuLevel(properties.getServerProperties().getServerCpuProperties().getLevelEnum().name());
@@ -106,10 +106,11 @@ public class MonitorConfigServiceImpl extends ServiceImpl<IMonitorConfigDao, Mon
         monitoringAlarmMailProperties.setEmills(StrUtil.splitToArray(monitorConfigPageFormVo.getAlarmMailEmills(), ';'));
         // 告警短信配置属性
         MonitoringAlarmSmsProperties monitoringAlarmSmsProperties = new MonitoringAlarmSmsProperties();
-        monitoringAlarmSmsProperties.setPhoneNumbers(StrUtil.splitToArray(monitorConfigPageFormVo.getAlarmSmsPhoneNumbers(), ';'));
-        monitoringAlarmSmsProperties.setAddress(monitorConfigPageFormVo.getAlarmSmsAddress());
-        monitoringAlarmSmsProperties.setProtocolTypeEnum(ProtocolTypeEnums.str2Enum(monitorConfigPageFormVo.getAlarmSmsProtocol()));
-        monitoringAlarmSmsProperties.setEnterpriseEnum(EnterpriseEnums.str2Enum(monitorConfigPageFormVo.getAlarmSmsEnterprise()));
+//        monitoringAlarmSmsProperties.setPhoneNumbers(StrUtil.splitToArray(monitorConfigPageFormVo.getAlarmSmsPhoneNumbers(), ';'));
+//        monitoringAlarmSmsProperties.setAddress(monitorConfigPageFormVo.getAlarmSmsAddress());
+//        monitoringAlarmSmsProperties.setProtocolTypeEnum(ProtocolTypeEnums.str2Enum(monitorConfigPageFormVo.getAlarmSmsProtocol()));
+//        monitoringAlarmSmsProperties.setEnterpriseEnum(EnterpriseEnums.str2Enum(monitorConfigPageFormVo.getAlarmSmsEnterprise()));//        monitoringAlarmSmsProperties.setPhoneNumbers(StrUtil.splitToArray(monitorConfigPageFormVo.getAlarmSmsPhoneNumbers(), ';'));
+
         // 告警配置属性
         MonitoringAlarmProperties monitoringAlarmProperties = new MonitoringAlarmProperties();
         monitoringAlarmProperties.setEnable(monitorConfigPageFormVo.getAlarmEnable() == 1);

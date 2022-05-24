@@ -71,8 +71,8 @@
                                             <div class="layui-input-block">
                                                 <input type="checkbox" name="alarmWay[0]" value="MAIL" title="邮件"
                                                        th:checked="${#arrays.contains(monitorConfigPageForm.alarmWay,'MAIL')}? true : false">
-                                                <input type="checkbox" name="alarmWay[1]" value="SMS" title="短信"
-                                                       th:checked="${#arrays.contains(monitorConfigPageForm.alarmWay,'SMS')}? true : false">
+<!--                                                <input type="checkbox" name="alarmWay[1]" value="SMS" title="短信"-->
+<!--                                                       th:checked="${#arrays.contains(monitorConfigPageForm.alarmWay,'SMS')}? true : false">-->
                                             </div>
                                         </div>
                                         <div class="layui-card">
@@ -93,51 +93,51 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="layui-card">
-                                            <div class="layui-card-header div-font-weight">短信</div>
-                                            <div class="layui-card-body" pad20>
-                                                <div class="layui-form-item layui-form-text">
-                                                    <label class="layui-form-label"
-                                                           style="text-align: left;">收信人号码</label>
-                                                    <div class="layui-input-block">
-                                                        <textarea name="alarmSmsPhoneNumbers" class="layui-textarea tag"
-                                                                  lay-verType="tips"
-                                                                  th:text="${monitorConfigPageForm.alarmSmsPhoneNumbers}">
-                                                        </textarea>
-                                                        <div class="layui-form-mid layui-word-aux">
-                                                            收信人手机号码，可输入多个，每输入完一个按下回车
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="layui-form-item">
-                                                    <label class="layui-form-label"
-                                                           style="text-align: left;">接口地址</label>
-                                                    <div class="layui-input-block">
-                                                        <input type="text" name="alarmSmsAddress" class="layui-input"
-                                                               lay-verify="url" lay-verType="tips"
-                                                               th:value="${monitorConfigPageForm.alarmSmsAddress}">
-                                                    </div>
-                                                </div>
-                                                <div class="layui-form-item">
-                                                    <label class="layui-form-label"
-                                                           style="text-align: left;">接口协议</label>
-                                                    <div class="layui-input-block">
-                                                        <input type="radio" name="alarmSmsProtocol"
-                                                               th:value="HTTP" th:title="HTTP"
-                                                               th:checked="${monitorConfigPageForm.alarmSmsProtocol=='HTTP'}? true : false">
-                                                    </div>
-                                                </div>
-                                                <div class="layui-form-item">
-                                                    <label class="layui-form-label"
-                                                           style="text-align: left;">接口企业</label>
-                                                    <div class="layui-input-block">
-                                                        <input type="radio" name="alarmSmsEnterprise"
-                                                               th:value="PHOENIX" th:title="PHOENIX"
-                                                               th:checked="${monitorConfigPageForm.alarmSmsEnterprise=='PHOENIX'}? true : false">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+<!--                                        <div class="layui-card">-->
+<!--                                            <div class="layui-card-header div-font-weight">短信</div>-->
+<!--                                            <div class="layui-card-body" pad20>-->
+<!--                                                <div class="layui-form-item layui-form-text">-->
+<!--                                                    <label class="layui-form-label"-->
+<!--                                                           style="text-align: left;">收信人号码</label>-->
+<!--                                                    <div class="layui-input-block">-->
+<!--                                                        <textarea name="alarmSmsPhoneNumbers" class="layui-textarea tag"-->
+<!--                                                                  lay-verType="tips"-->
+<!--                                                                  th:text="${monitorConfigPageForm.alarmSmsPhoneNumbers}">-->
+<!--                                                        </textarea>-->
+<!--                                                        <div class="layui-form-mid layui-word-aux">-->
+<!--                                                            收信人手机号码，可输入多个，每输入完一个按下回车-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="layui-form-item">-->
+<!--                                                    <label class="layui-form-label"-->
+<!--                                                           style="text-align: left;">接口地址</label>-->
+<!--                                                    <div class="layui-input-block">-->
+<!--                                                        <input type="text" name="alarmSmsAddress" class="layui-input"-->
+<!--                                                               lay-verify="url" lay-verType="tips"-->
+<!--                                                               th:value="${monitorConfigPageForm.alarmSmsAddress}">-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="layui-form-item">-->
+<!--                                                    <label class="layui-form-label"-->
+<!--                                                           style="text-align: left;">接口协议</label>-->
+<!--                                                    <div class="layui-input-block">-->
+<!--                                                        <input type="radio" name="alarmSmsProtocol"-->
+<!--                                                               th:value="HTTP" th:title="HTTP"-->
+<!--                                                               th:checked="${monitorConfigPageForm.alarmSmsProtocol=='HTTP'}? true : false">-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="layui-form-item">-->
+<!--                                                    <label class="layui-form-label"-->
+<!--                                                           style="text-align: left;">接口企业</label>-->
+<!--                                                    <div class="layui-input-block">-->
+<!--                                                        <input type="radio" name="alarmSmsEnterprise"-->
+<!--                                                               th:value="PHOENIX" th:title="PHOENIX"-->
+<!--                                                               th:checked="${monitorConfigPageForm.alarmSmsEnterprise=='PHOENIX'}? true : false">-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
                                     </div>
                                 </div>
                                 <div class="layui-card">
@@ -153,19 +153,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="layui-card">
-                                    <div class="layui-card-header div-font-weight">TCP服务</div>
-                                    <div class="layui-card-body" pad20>
-                                        <div class="layui-form-item">
-                                            <label class="layui-form-label" style="text-align: left;">是否监控</label>
-                                            <div class="layui-input-inline">
-                                                <input type="checkbox" name="tcpEnable" lay-text="是|否"
-                                                       th:value=1 lay-skin="switch"
-                                                       th:checked="${monitorConfigPageForm.tcpEnable==1}? true : false">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+<!--                                <div class="layui-card">-->
+<!--                                    <div class="layui-card-header div-font-weight">TCP服务</div>-->
+<!--                                    <div class="layui-card-body" pad20>-->
+<!--                                        <div class="layui-form-item">-->
+<!--                                            <label class="layui-form-label" style="text-align: left;">是否监控</label>-->
+<!--                                            <div class="layui-input-inline">-->
+<!--                                                <input type="checkbox" name="tcpEnable" lay-text="是|否"-->
+<!--                                                       th:value=1 lay-skin="switch"-->
+<!--                                                       th:checked="${monitorConfigPageForm.tcpEnable==1}? true : false">-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
                                 <div class="layui-card">
                                     <div class="layui-card-header div-font-weight">数据库</div>
                                     <div class="layui-card-body" pad20>

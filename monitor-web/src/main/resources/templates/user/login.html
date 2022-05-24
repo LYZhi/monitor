@@ -29,7 +29,7 @@
     <div class="layadmin-user-login-main">
         <div class="layadmin-user-login-box layadmin-user-login-header">
             <h2>monitor</h2>
-            <p>云监控平台</p>
+            <p>运维监控平台</p>
         </div>
         <form class="layadmin-user-login-box layadmin-user-login-body layui-form" th:action="@{/doLogin}" method="post">
             <div class="layui-form-item">
@@ -59,39 +59,16 @@
                     登录已超时，请重新登录！
                 </label>
             </div>
-            <div class="layui-form-item" style="margin-bottom: 20px;">
-                <input type="checkbox" name="remember-me" lay-skin="primary" title="记住我">
-                <!--<a href="javascript:;" class="layadmin-user-jump-change layadmin-link"
-                   style="margin-top: 7px;">忘记密码？</a>-->
-            </div>
+<!--            <div class="layui-form-item" style="margin-bottom: 20px;">-->
+<!--                <input type="checkbox" name="remember-me" lay-skin="primary" title="记住我">-->
+<!--                &lt;!&ndash;<a href="javascript:;" class="layadmin-user-jump-change layadmin-link"-->
+<!--                   style="margin-top: 7px;">忘记密码？</a>&ndash;&gt;-->
+<!--            </div>-->
             <div class="layui-form-item">
                 <button type="submit" class="layui-btn layui-btn-fluid" lay-submit>登 入</button>
             </div>
         </form>
     </div>
-    <div class="layui-trans layadmin-user-login-footer">
-        <p>Copyright 2020-2025 by PIFENG</p>
-        <p>
-            <span>
-                <a href='https://gitee.com/monitoring-platform/phoenix' target="_blank">
-                Fork me on Gitee
-                </a>
-            </span>
-        </p>
-    </div>
-
-    <!--<div class="ladmin-user-login-theme">
-      <script type="text/html" template>
-        <ul>
-          <li data-theme=""><img src="{{ layui.setter.base }}style/res/bg-none.jpg"></li>
-          <li data-theme="#03152A" style="background-color: #03152A;"></li>
-          <li data-theme="#2E241B" style="background-color: #2E241B;"></li>
-          <li data-theme="#50314F" style="background-color: #50314F;"></li>
-          <li data-theme="#344058" style="background-color: #344058;"></li>
-          <li data-theme="#20222A" style="background-color: #20222A;"></li>
-        </ul>
-      </script>
-    </div>-->
 
 </div>
 <script src="./layui/layui.js" th:src="@{/layui/layui.js}" charset="utf-8"></script>

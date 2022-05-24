@@ -25,40 +25,7 @@
     <div class="layui-row layui-col-space15">
         <div class="layui-col-sm8">
             <div class=" layui-row layui-col-space10">
-                <!--<div class="layui-col-sm6 layui-col-md2">
-                    <div class="layui-card">
-                        <div class="layui-card-header">
-                            服务器
-                            <span class="layui-badge layui-bg-black layuiadmin-badge">台</span>
-                        </div>
-                        <div class="layui-card-body layuiadmin-card-list" id="server-card-list-1">
-                            <p class="layuiadmin-big-font layuiadmin-big-font-my"
-                               th:text="${homeServerVo.serverSum}"></p>
-                            <p>
-                                Windows
-                                <span class="layuiadmin-span-color">
-                                    [[${homeServerVo.windowsSum}]]
-                                    <i class="layui-inline layui-icon"><img
-                                            th:src="@{/images/icon16/windows-16.png}"></i></span>
-                            </p>
-                            <p>
-                                Linux
-                                <span class="layuiadmin-span-color">
-                                    [[${homeServerVo.linuxSum}]]
-                                    <i class="layui-inline layui-icon"><img
-                                            th:src="@{/images/icon16/linux-16.png}"></i></span>
-                            </p>
-                            <p>
-                                其他
-                                <span class="layuiadmin-span-color">
-                                    [[${homeServerVo.otherSum}]]
-                                    <i class="layui-inline layui-icon"><img
-                                            th:src="@{/images/icon16/other-16.png}"></i></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>-->
-                <div class="layui-col-sm6 layui-col-md2">
+                <div class="layui-col-sm6 layui-col-md2-4">
                     <div class="layui-card">
                         <div class="layui-card-header">
                             服务器
@@ -87,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="layui-col-sm6 layui-col-md2">
+                <div class="layui-col-sm6 layui-col-md2-4">
                     <div class="layui-card">
                         <div class="layui-card-header">
                             应用程序
@@ -116,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="layui-col-sm6 layui-col-md2">
+                <div class="layui-col-sm6 layui-col-md2-4">
                     <div class="layui-card">
                         <div class="layui-card-header">
                             数据库
@@ -152,7 +119,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="layui-col-sm6 layui-col-md2">
+                <div class="layui-col-sm6 layui-col-md2-4">
                     <div class="layui-card">
                         <div class="layui-card-header">
                             网络
@@ -188,43 +155,43 @@
                         </div>
                     </div>
                 </div>
-                <div class="layui-col-sm6 layui-col-md2">
-                    <div class="layui-card">
-                        <div class="layui-card-header">
-                            TCP服务
-                            <span class="layui-badge layui-bg-black layuiadmin-badge">个</span>
-                        </div>
-                        <div class="layui-card-body layuiadmin-card-list" id="tcp-card-list">
-                            <p class="layuiadmin-big-font layuiadmin-big-font-my">
-                                [[${homeTcpVo.tcpSum}]]
-                                <i class="home-i">[[${homeTcpVo.tcpConnectRate}]]
-                                    <img th:src="@{/images/icon16/percentage-16.png}"></i>
-                            </p>
-                            <p>
-                                正常
-                                <span class="layuiadmin-span-color">
-                                    [[${homeTcpVo.tcpConnectSum}]]
-                                    <i class="layui-inline layui-icon"><img
-                                            th:src="@{/images/icon16/tcp-connect-16.png}"></i></span>
-                            </p>
-                            <p>
-                                异常
-                                <span class="layuiadmin-span-color">
-                                    [[${homeTcpVo.tcpDisconnectSum}]]
-                                    <i class="layui-inline layui-icon"><img
-                                            th:src="@{/images/icon16/tcp-disconnect-16.png}"></i></span>
-                            </p>
-                            <p>
-                                未知
-                                <span class="layuiadmin-span-color">
-                                    [[${homeTcpVo.tcpUnsentSum}]]
-                                    <i class="layui-inline layui-icon"><img
-                                            th:src="@{/images/icon16/tcp-unkown-16.png}"></i></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="layui-col-sm6 layui-col-md2">
+<!--                <div class="layui-col-sm6 layui-col-md2">-->
+<!--                    <div class="layui-card">-->
+<!--                        <div class="layui-card-header">-->
+<!--                            TCP服务-->
+<!--                            <span class="layui-badge layui-bg-black layuiadmin-badge">个</span>-->
+<!--                        </div>-->
+<!--                        <div class="layui-card-body layuiadmin-card-list" id="tcp-card-list">-->
+<!--                            <p class="layuiadmin-big-font layuiadmin-big-font-my">-->
+<!--                                [[${homeTcpVo.tcpSum}]]-->
+<!--                                <i class="home-i">[[${homeTcpVo.tcpConnectRate}]]-->
+<!--                                    <img th:src="@{/images/icon16/percentage-16.png}"></i>-->
+<!--                            </p>-->
+<!--                            <p>-->
+<!--                                正常-->
+<!--                                <span class="layuiadmin-span-color">-->
+<!--                                    [[${homeTcpVo.tcpConnectSum}]]-->
+<!--                                    <i class="layui-inline layui-icon"><img-->
+<!--                                            th:src="@{/images/icon16/tcp-connect-16.png}"></i></span>-->
+<!--                            </p>-->
+<!--                            <p>-->
+<!--                                异常-->
+<!--                                <span class="layuiadmin-span-color">-->
+<!--                                    [[${homeTcpVo.tcpDisconnectSum}]]-->
+<!--                                    <i class="layui-inline layui-icon"><img-->
+<!--                                            th:src="@{/images/icon16/tcp-disconnect-16.png}"></i></span>-->
+<!--                            </p>-->
+<!--                            <p>-->
+<!--                                未知-->
+<!--                                <span class="layuiadmin-span-color">-->
+<!--                                    [[${homeTcpVo.tcpUnsentSum}]]-->
+<!--                                    <i class="layui-inline layui-icon"><img-->
+<!--                                            th:src="@{/images/icon16/tcp-unkown-16.png}"></i></span>-->
+<!--                            </p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="layui-col-sm6 layui-col-md2-4">
                     <div class="layui-card">
                         <div class="layui-card-header">
                             告警通知

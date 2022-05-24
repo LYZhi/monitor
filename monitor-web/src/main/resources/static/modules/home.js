@@ -346,25 +346,25 @@
                         '         </p>';
                     $('#ip-card-list').empty().append(htmlIp);
                     // TCP
-                    var htmlTcp = '<p class="layuiadmin-big-font layuiadmin-big-font-my">' + homeTcpVo.tcpSum +
-                        '               <i class="home-i">' + homeTcpVo.tcpConnectRate + '<img src="' + ctxPath + 'images/icon16/percentage-16.png"></i>' +
-                        '         </p>' +
-                        '         <p>正常' +
-                        '               <span class="layuiadmin-span-color">' + homeTcpVo.tcpConnectSum +
-                        '                      <i class="layui-inline layui-icon"><img src="' + ctxPath + 'images/icon16/tcp-connect-16.png"></i>' +
-                        '               </span>' +
-                        '         </p>' +
-                        '         <p>异常' +
-                        '               <span class="layuiadmin-span-color">' + homeTcpVo.tcpDisconnectSum +
-                        '                      <i class="layui-inline layui-icon"><img src="' + ctxPath + 'images/icon16/tcp-disconnect-16.png"></i>' +
-                        '               </span>' +
-                        '         </p>' +
-                        '         <p>未知' +
-                        '               <span class="layuiadmin-span-color">' + homeTcpVo.tcpUnsentSum +
-                        '                      <i class="layui-inline layui-icon"><img src="' + ctxPath + 'images/icon16/tcp-unkown-16.png"></i>' +
-                        '               </span>' +
-                        '         </p>';
-                    $('#tcp-card-list').empty().append(htmlTcp);
+                    // var htmlTcp = '<p class="layuiadmin-big-font layuiadmin-big-font-my">' + homeTcpVo.tcpSum +
+                    //     '               <i class="home-i">' + homeTcpVo.tcpConnectRate + '<img src="' + ctxPath + 'images/icon16/percentage-16.png"></i>' +
+                    //     '         </p>' +
+                    //     '         <p>正常' +
+                    //     '               <span class="layuiadmin-span-color">' + homeTcpVo.tcpConnectSum +
+                    //     '                      <i class="layui-inline layui-icon"><img src="' + ctxPath + 'images/icon16/tcp-connect-16.png"></i>' +
+                    //     '               </span>' +
+                    //     '         </p>' +
+                    //     '         <p>异常' +
+                    //     '               <span class="layuiadmin-span-color">' + homeTcpVo.tcpDisconnectSum +
+                    //     '                      <i class="layui-inline layui-icon"><img src="' + ctxPath + 'images/icon16/tcp-disconnect-16.png"></i>' +
+                    //     '               </span>' +
+                    //     '         </p>' +
+                    //     '         <p>未知' +
+                    //     '               <span class="layuiadmin-span-color">' + homeTcpVo.tcpUnsentSum +
+                    //     '                      <i class="layui-inline layui-icon"><img src="' + ctxPath + 'images/icon16/tcp-unkown-16.png"></i>' +
+                    //     '               </span>' +
+                    //     '         </p>';
+                    // $('#tcp-card-list').empty().append(htmlTcp);
                     // 告警
                     var htmlAlarm = '<p class="layuiadmin-big-font layuiadmin-big-font-my">' + homeAlarmRecordVo.alarmRecordSum +
                         '                   <i class="home-i">' + homeAlarmRecordVo.alarmSucRate + '<img src="' + ctxPath + 'images/icon16/percentage-16.png"></i>' +

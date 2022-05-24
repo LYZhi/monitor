@@ -47,23 +47,16 @@
                 </li>
             </ul>
             <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
-                <!--<li class="layui-nav-item" lay-unselect>
-                    <a lay-href="app/message/index.html" layadmin-event="message" lay-text="消息中心">
-                        <i class="layui-icon layui-icon-notice"></i>
-                        &lt;!&ndash; 如果有新消息，则显示小圆点 &ndash;&gt;
-                        <span class="layui-badge-dot"></span>
-                    </a>
-                </li>-->
-                <li class="layui-nav-item layui-hide-xs" lay-unselect>
-                    <a href="javascript:;" layadmin-event="theme">
-                        <i class="layui-icon layui-icon-theme"></i>
-                    </a>
-                </li>
-                <li class="layui-nav-item layui-hide-xs" lay-unselect>
-                    <a href="javascript:;" layadmin-event="note">
-                        <i class="layui-icon layui-icon-note"></i>
-                    </a>
-                </li>
+<!--                <li class="layui-nav-item layui-hide-xs" lay-unselect>-->
+<!--                    <a href="javascript:;" layadmin-event="theme">-->
+<!--                        <i class="layui-icon layui-icon-theme"></i>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li class="layui-nav-item layui-hide-xs" lay-unselect>-->
+<!--                    <a href="javascript:;" layadmin-event="note">-->
+<!--                        <i class="layui-icon layui-icon-note"></i>-->
+<!--                    </a>-->
+<!--                </li>-->
                 <li class="layui-nav-item layui-hide-xs" lay-unselect>
                     <a href="javascript:;" layadmin-event="fullscreen">
                         <i class="layui-icon layui-icon-screen-full"></i>
@@ -100,7 +93,7 @@
         <div class="layui-side layui-side-menu">
             <div class="layui-side-scroll">
                 <div class="layui-logo" th:attr="lay-href=@{/home}">
-                    <span>monitor云监控平台</span>
+                    <span>monitor监控平台</span>
                 </div>
 
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu"
@@ -140,13 +133,13 @@
                             <cite>网络</cite>
                         </a>
                     </li>
-                    <li data-name="tcp" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="TCP" lay-direction="2"
-                           th:attr="lay-href=@{/monitor-tcp/list}">
-                            <i class="layui-icon layui-icon-tcp"></i>
-                            <cite>TCP服务</cite>
-                        </a>
-                    </li>
+<!--                    <li data-name="tcp" class="layui-nav-item">-->
+<!--                        <a href="javascript:;" lay-tips="TCP" lay-direction="2"-->
+<!--                           th:attr="lay-href=@{/monitor-tcp/list}">-->
+<!--                            <i class="layui-icon layui-icon-tcp"></i>-->
+<!--                            <cite>TCP服务</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
                     <li data-name="alarm" class="layui-nav-item">
                         <a href="javascript:;" lay-tips="告警" lay-direction="2"
                            th:attr="lay-href=@{/monitor-alarm-record/list}">
@@ -202,20 +195,20 @@
                             </dd>
                         </dl>
                     </li>
-                    <li data-name="druid" class="layui-nav-item" sec:authorize="hasAuthority('超级管理员')">
-                        <a href="javascript:;" lay-tips="Druid" lay-direction="2"
-                           th:attr="lay-href=@{/druid/webapp.html}">
-                            <i class="layui-icon layui-icon-snowflake"></i>
-                            <cite>Druid</cite>
-                        </a>
-                    </li>
-                    <li data-name="Knife4j" class="layui-nav-item" sec:authorize="hasAuthority('超级管理员')">
-                        <a href="javascript:;" lay-tips="Knife4j" lay-direction="2"
-                           th:attr="lay-href=@{/doc.html}">
-                            <i class="layui-icon layui-icon-component"></i>
-                            <cite>Knife4j</cite>
-                        </a>
-                    </li>
+<!--                    <li data-name="druid" class="layui-nav-item" sec:authorize="hasAuthority('超级管理员')">-->
+<!--                        <a href="javascript:;" lay-tips="Druid" lay-direction="2"-->
+<!--                           th:attr="lay-href=@{/druid/webapp.html}">-->
+<!--                            <i class="layui-icon layui-icon-snowflake"></i>-->
+<!--                            <cite>Druid</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                    <li data-name="Knife4j" class="layui-nav-item" sec:authorize="hasAuthority('超级管理员')">-->
+<!--                        <a href="javascript:;" lay-tips="Knife4j" lay-direction="2"-->
+<!--                           th:attr="lay-href=@{/doc.html}">-->
+<!--                            <i class="layui-icon layui-icon-component"></i>-->
+<!--                            <cite>Knife4j</cite>-->
+<!--                        </a>-->
+<!--                    </li>-->
                     <li data-name="myself" class="layui-nav-item">
                         <a href="javascript:;" lay-tips="我的" lay-direction="2">
                             <i class="layui-icon layui-icon-username"></i>

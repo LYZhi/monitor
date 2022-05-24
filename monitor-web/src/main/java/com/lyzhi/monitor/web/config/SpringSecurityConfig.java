@@ -34,7 +34,7 @@ import javax.sql.DataSource;
 @EnableJdbcHttpSession
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 // 未开启第三方认证
-@ConditionalOnExpression("!${third-auth.enable:false}")
+//@ConditionalOnExpression("!${third-auth.enable:false}")
 public class SpringSecurityConfig extends BaseWebSecurityConfigurerAdapter {
 
     /**
@@ -54,7 +54,9 @@ public class SpringSecurityConfig extends BaseWebSecurityConfigurerAdapter {
 
     /**
      * <p>
-     * WebSecurity主要针对全局请求忽略规则配置（比如说静态文件，比如说注册页面）、全局HttpFirewall配置、是否debug配置、全局SecurityFilterChain配置、privilegeEvaluator、expressionHandler、securityInterceptor等。
+     * WebSecurity主要针对全局请求忽略规则配置（比如说静态文件，比如说注册页面）、
+     * 全局HttpFirewall配置、是否debug配置、全局SecurityFilterChain配置、
+     * privilegeEvaluator、expressionHandler、securityInterceptor等。
      * </p>
      *
      * @param web {@link WebSecurity}

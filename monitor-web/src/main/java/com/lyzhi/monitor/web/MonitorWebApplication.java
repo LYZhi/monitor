@@ -2,10 +2,8 @@ package com.lyzhi.monitor.web;
 
 import com.lyzhi.monitor.common.web.toolkit.CustomizationBeanHandler;
 import com.lyzhi.monitor.common.web.toolkit.UniqueBeanNameGenerator;
-import com.lyzhi.monitor.web.thirdauth.common.property.ThirdAuthProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.retry.annotation.EnableRetry;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -18,11 +16,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  *
  */
 @SpringBootApplication
-@EnableConfigurationProperties(ThirdAuthProperties.class)
+//@EnableConfigurationProperties(ThirdAuthProperties.class)
 @ComponentScan(nameGenerator = UniqueBeanNameGenerator.class)
 @EnableTransactionManagement
 @EnableRetry
-public class MonitorWebApplication extends CustomizationBeanHandler {
+public class  MonitorWebApplication extends CustomizationBeanHandler {
 
     public static void main(String[] args) {
         SpringApplication.run(MonitorWebApplication.class, args);
